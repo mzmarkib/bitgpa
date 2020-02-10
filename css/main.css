@@ -1,0 +1,276 @@
+.dialogOverlay {
+  background-color: #fcfcfc;
+  opacity: 0.7;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.gradesPrompt {
+  opacity: 1;
+  background-color: none;
+  display: none;
+}
+
+.gradesPrompt .innerBox {
+  z-index: 10;
+  width: 300px;
+  margin: auto;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 8px 0px #ededed;
+          box-shadow: 0px 0px 8px 0px #ededed;
+  padding: 10px;
+}
+
+.gradesPrompt .innerBox .promptHeader {
+  padding: 10px;
+  line-height: 30px;
+  color: #444;
+}
+
+.gradesPrompt .innerBox .promptHeader span {
+  float: right;
+  background-color: #ededed;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  color: #9f9f9f;
+  margin: -15px;
+}
+
+.gradesPrompt .innerBox .promptHeader span:hover {
+  color: #444;
+  cursor: pointer;
+}
+
+.gradesPrompt .innerBox .promptBody .grades {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-items: center;
+  padding-bottom: 10px;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .green {
+  color: green;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .orange {
+  color: orange;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .orangered {
+  color: orangered;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .red {
+  color: red;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .darkred {
+  color: darkred;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .grade {
+  border-radius: 100%;
+  background-color: #ededed;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 47px;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .grade:hover {
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0px 0px 8px 0px #ededed;
+          box-shadow: 0px 0px 8px 0px #ededed;
+}
+
+.gradesPrompt .innerBox .promptBody .grades .grade:last-child {
+  width: 150px;
+  border-radius: 25px;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+* {
+  font-family: "Myriad Pro";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  padding: 5px;
+}
+
+body {
+  background-color: #fcfcfc;
+}
+
+.subject {
+  border-top: 1px solid #ededed;
+  color: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: normal;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  padding: 5px;
+}
+
+.subject .sub {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.subject .sub .code {
+  font-family: "Fira Code";
+  color: #0089D2;
+  font-size: 0.7em;
+}
+
+.subject .sub .name {
+  font-size: 1em;
+}
+
+.subject .subCredits {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.subject .attempt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.subject .attempt {
+  font-family: "Myriad Pro";
+}
+
+.subject .attempt label {
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #ededed;
+  color: #9f9f9f;
+  border-radius: 100%;
+  line-height: 27px;
+  margin: 0px 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  padding: 3px 3px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.subject .attempt label:hover {
+  color: #0089D2;
+}
+
+.subject .attempt input[type="checkbox"] {
+  display: absolute;
+  position: absolute;
+  opacity: 0;
+}
+
+.subject .attempt input[type="checkbox"]:checked + label {
+  background-color: #0089D2;
+  color: #fff;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.subject .subResult {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  color: #9f9f9f;
+  height: 30px;
+  border-radius: 20px;
+  border: thick;
+  text-align: center;
+  line-height: 23px;
+  padding: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #ededed;
+}
+
+.subject .subResult:hover {
+  cursor: pointer;
+  color: #0089D2;
+}
+
+.subject .subResult:focus {
+  outline: none;
+}
+
+.disabledSub {
+  pointer-events: none;
+}
+
+.disabledSub:hover {
+  cursor: pointer;
+}
+
+.disabledSub .attempt {
+  font-family: "Myriad Pro";
+}
+
+.disabledSub .attempt input[type="checkbox"]:checked + label {
+  background-color: #ededed;
+  color: #9f9f9f;
+}
+
+.semester {
+  padding: 10px 5px;
+}
+
+.semester .title {
+  font-family: "Fira Code";
+  color: #0089D2;
+  text-indent: 20px;
+}
+
+.semester .yearTitle {
+  font-size: 10px;
+}
+/*# sourceMappingURL=main.css.map */

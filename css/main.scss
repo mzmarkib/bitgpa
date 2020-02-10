@@ -1,0 +1,147 @@
+$color-1: #444;
+$color-2: #0089D2;
+$color-3: #9f9f9f;
+$color-4: #ededed;
+$bg-color: #fcfcfc;
+
+@import 'gradesBox';
+
+*{
+    font-family: "Myriad Pro";
+    box-sizing: border-box;
+}
+form{
+    max-width:500px;
+    margin: 0 auto;
+    border-radius:5px;
+    box-shadow: 0px 0px 2px 1px $color-4;
+    padding:5px;
+}
+body{
+    background-color: $bg-color;
+}
+.subject{
+    border-top: 1px solid $color-4;
+    color: $color-1;
+    display: flex;
+    justify-items: normal;
+    align-items: center;
+    height: 50px;
+    padding:5px;
+
+    .sub{
+        flex:6;
+        display:flex;
+        flex-direction: column;
+
+        .code{
+            font-family: "Fira Code";
+            color:$color-2;
+            font-size: 0.7em;
+        }
+        .name{
+            font-size: 1em;
+        }
+    }
+    .subCredits{
+        flex:1;
+    }
+    .attempt{
+        flex:1;
+    }
+
+    .attempt{
+        font-family: "Myriad Pro";
+        
+        label {
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: $color-4;
+            color: $color-3;
+            border-radius: 100%;
+            line-height: 27px;
+            margin: 0px 5px;
+            user-select: none;
+            transition: all .2s;
+            padding: 3px 3px;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            font-size: 13px;
+
+            &:hover{
+                color: $color-2;
+            }
+          }
+          
+          input[type="checkbox"] {
+            display: absolute;
+            position: absolute;
+            opacity: 0;
+            
+            &:checked + label {              
+              background-color: $color-2;
+              color: #fff;
+              transition: all .2s;
+            }  
+          }
+    }
+
+    .subResult{
+        flex:2;        
+        color: $color-3;
+        height: 30px;
+        border-radius:20px;
+        border: thick;
+        text-align: center;
+        line-height: 23px;
+        padding: 5px;
+        transition: 0.3s;
+        background-color: $color-4;
+
+        &:hover{
+            cursor: pointer;
+            color: $color-2;
+        }
+        &:focus{
+            outline:none;
+        }
+        
+    }
+}
+
+.disabledSub{
+    pointer-events: none;
+    
+    &:hover{
+        cursor: pointer;
+    }
+
+    .attempt{
+        font-family: "Myriad Pro";
+        
+        
+          
+          input[type="checkbox"] {
+            
+            &:checked + label {              
+              background-color: $color-4;
+              color: $color-3;
+            }  
+          }
+    }
+}
+
+.semester{
+    padding:10px 5px;
+
+    .title{
+        font-family: "Fira Code";
+        color: $color-2;
+        text-indent: 20px;
+    }
+    .yearTitle{
+        font-size: 10px;
+    }
+}

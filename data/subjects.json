@@ -1,0 +1,71 @@
+[
+    {   "semester":"SEMESTER 01",
+        "year": "YEAR 01",
+        "subjects": [
+            {"code":"IT1105", "name":"Information Systems & Technology", "yer":1, "sem":1, "cred":3, "type": "C"},
+            {"code":"IT1205", "name":"Computer Systems I", "yer":1, "sem":1, "cred":3, "type": "C"},
+            {"code":"IT1305", "name":"Web Application Development I", "yer":1, "sem":1, "cred":3, "type": "E"},
+            {"code":"EN1101", "name":"Communication Skills", "yer":1, "sem":1, "cred":3, "type": "E"},
+            {"code":"EN1201", "name":"Introductory Mathematics", "yer":1, "sem":1, "cred":2, "type": "E"},
+            {"code":"EN1301", "name":"Personal Computing", "yer":1, "sem":1, "cred":2, "type": "E"}
+        ]
+    },
+    {   "semester":"SEMESTER 02",
+        "year": "YEAR 01",
+        "subjects": [
+            {"code":"IT2105", "name":"Mathematics for Computing I", "yer":1, "sem":2, "cred":3, "type":"C"},
+            {"code":"IT2205", "name":"Programming I", "yer":1, "sem":2, "cred":4, "type":"C"},
+            {"code":"IT2305", "name":"Database Systems I", "yer":1, "sem":2, "cred":4, "type":"C"},
+            {"code":"IT2405", "name":"Systems Analysis & Design", "yer":1, "sem":2, "cred":3, "type":"C"}
+        ]
+    },
+    {   "semester":"SEMESTER 03",
+        "year": "YEAR 02",
+        "subjects": [
+            {"code":"IT3105", "name":"Object Oriented Analysis & Design", "yer":2, "sem":3, "cred":3, "type": "C"},
+            {"code":"IT3205", "name":"Fundamentals of Software Engineering", "yer":2, "sem":3, "cred":3, "type": "C"},
+            {"code":"IT3305", "name":"Mathematics for Computing II", "yer":2, "sem":3, "cred":3, "type": "C"},
+            {"code":"IT3405", "name":"User Interface Design", "yer":2, "sem":3, "cred":3, "type": "C"},
+            {"code":"IT3505", "name":"Web Application Development II", "yer":2, "sem":3, "cred":4, "type": "C"}
+        ]
+    },
+    {   "semester":"SEMESTER 04",
+        "year": "YEAR 02",
+        "subjects": [
+            {"code":"IT4105", "name":"Programming II", "yer":2, "sem":4, "cred":4, "type":"C"},
+            {"code":"IT4205", "name":"Information Technology Project Management", "yer":2, "sem":4, "cred":3, "type":"C"},
+            {"code":"IT4305", "name":"Rapid Software Development", "yer":2, "sem":4, "cred":4, "type":"C"},
+            {"code":"IT4405", "name":"Computer Networks", "yer":2, "sem":4, "cred":3, "type":"C"}
+        ]
+    },
+    {   "semester":"SEMESTER 05",
+        "year": "YEAR 03",
+        "subjects": [
+            {"code":"IT5105", "name":"Professional Issues in IT", "yer":3, "sem":5, "cred":3, "type":"C"},
+            {"code":"IT5205", "name":"Information Systems Security", "yer":3, "sem":5, "cred":3, "type":"C"},
+            {"code":"IT5305", "name":"Computer Systems II", "yer":3, "sem":5, "cred":3, "type":"O"},
+            {"code":"IT5405", "name":"Fundamentals of Multimedia", "yer":3, "sem":5, "cred":3, "type":"O"},
+            {"code":"EN5101", "name":"Fundamentals of Management", "yer":3, "sem":5, "cred":2, "type":"C"}
+        ]
+    },
+    {   "semester":"SEMESTER 06",
+        "year": "YEAR 03",
+        "subjects": [            
+            {"code":"IT6205", "name":"Systems & Network Administration", "yer":3, "sem":6, "cred":3, "type":"C"},
+            {"code":"IT6305", "name":"e-Business Application", "yer":3, "sem":6, "cred":3, "type":"O"},
+            {"code":"IT6405", "name":"Database Systems II", "yer":3, "sem":6, "cred":3, "type":"C"},
+            {"code":"IT6505", "name":"Middleware Architecture", "yer":3, "sem":6, "cred":3, "type":"O"},
+            {"code":"EN6502", "name":"Introduction to Entrepreneurship", "yer":3, "sem":6, "cred":2, "type":"C"}
+        ]
+    },
+    {   "semester":"SEMESTER 05 & 06",
+        "year": "YEAR 03",
+        "subjects": [            
+            {"code":"IT6105", "name":"Software Development Project 5 And 6", "yer":3, "sem":6, "cred":8, "type":"C"}
+        ]
+    }
+]
+
+
+
+

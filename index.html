@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <form action="">
+
+      
+            
+        <div class="semester">
+            <div class="title yearTitle">YEAR 01</div>
+            <div class="title semesterTitle">SEMESTER 01</div>
+            <div class="subject">
+                <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
+                <div class="subCredits">03</div>
+                <div class="attempt">
+                    <input type="checkbox" id="checkboxOne" value="" checked><label for="checkboxOne">1st</label>
+                </div>
+                <button type="button" data_gpv="-1" class="subResult">SELECT</button>
+            </div>
+            <div class="subject disabledSub">
+                <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
+                <div class="subCredits">03</div>
+                <div class="attempt">
+                    <input type="checkbox" id="checkboxTwo" value="" checked><label for="checkboxTwo">1st</label>
+                </div>
+                <button type="button" data_gpv="-1" class="subResult">SELECT</button>
+            </div>
+        </div>
+        
+        
+    </form>
+    
+    <!-- Grades Dialog Box HTML start -->
+    <div class="dialogOverlay">        
+    </div>
+    <div class="gradesPrompt">
+        <div class="innerBox">
+            <div class="promptHeader">
+            Select your Grade: <span class="promptClose">X</span>
+            </div>
+            <div class="promptBody">
+                <div class="grades">
+                <div data_gpv="4" class="green grade">A+</div>
+                <div data_gpv="4" class="green grade">A</div>
+                <div data_gpv="3.75" class="green grade">A-</div>
+                <div data_gpv="3.25" class="orange grade">B+</div>
+                <div data_gpv="3" class="orange grade">B</div>
+                <div data_gpv="2.75" class="orange grade">B-</div>
+                <div data_gpv="2.25" class="orangered grade">C+</div>
+                <div data_gpv="2" class="orangered grade">C</div>
+                <div data_gpv="1.75" class="orangered grade">C-</div>
+                <div data_gpv="1.25" class="red grade">D+</div>
+                <div data_gpv="1" class="red grade">D</div>
+                <div data_gpv="0.75" class="red grade">D-</div>
+                <div data_gpv="0" class="darkred grade">E</div>
+                <div data_gpv="-1" class="grade">NOT SAT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+         
+    <!-- Grades Dialog Box HTML end -->
+    <script>     
+
+
+        //Custom Grades Prompt
+        let clickedSub; //the sebject that was clicked to changed
+        function GradesPrompt(){
+
+            this.render = function(e){
+                // Displays the Grades Prompt
+                document.querySelector(".gradesPrompt").style.display = "flex";
+                document.querySelector(".dialogOverlay").style.display = "block";
+                clickedSub = e;
+            }
+
+            this.close = function(){
+                document.querySelector(".gradesPrompt").style.display = "none";
+                document.querySelector(".dialogOverlay").style.display = "none";
+            }
+            
+        }
+        
+        //Closes Grades Prompt when the Close button or the Overlay is clicked on
+        var Prompt = new GradesPrompt();
+
+        const closeBtns = document.querySelectorAll(".dialogOverlay, .promptClose");
+            closeBtns.forEach(function(closeBtn){
+                closeBtn.addEventListener("click",function(e){
+                    Prompt.close();
+                });
+            });
+
+        //Opens Grades Prompt for each SELECT Button when Clicked
+        const resultBtns = document.querySelectorAll(".subResult");
+
+        resultBtns.forEach(function(resultBtn){
+            resultBtn.addEventListener("click",function(e){
+                Prompt.render(e);
+            });
+        });
+
+        // Changes the Values of the SELECT button when a result is chosen
+        const gradeBtns = document.querySelectorAll(".grades .grade");
+        gradeBtns.forEach(function(gradeBtn){
+            gradeBtn.addEventListener("click",function(e){
+                let grade = e.target.innerHTML;
+                let gpv = e.target.getAttribute("data_gpv");
+                clickedSub.target.innerHTML = grade;
+                clickedSub.target.setAttribute("data_gpv",gpv);
+                Prompt.close();
+            });
+        });
+
+
+        //Once the Body Loads
+        const body = document.querySelector("body");
+
+        body.onload = function(){
+            let subs = getSubjects();
+            console.log(subs);
+        };
+
+        //Function that retrieves data from the the subjects.json file
+        const getSubjects = function(){
+        	let subjects = [];            
+            fetch("data/subjects.json")
+            .then(res =>res.json())
+            .then((data) => { 
+                subjects.push(data);
+                return subjects;
+            })
+        }
+
+
+
+    </script>
+</body>
+</html>

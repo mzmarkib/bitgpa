@@ -1,0 +1,88 @@
+.dialogOverlay{
+    background-color: $bg-color;
+    opacity: 0.7;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;    
+    margin:0;
+    padding:0;
+    display:none;
+}
+.gradesPrompt{
+    @extend .gradesPrompt;
+    opacity: 1;
+    background-color: none;
+    // display: flex;
+    display:none;
+    
+
+    .innerBox{
+        z-index: 10;
+        width:300px;
+        margin: auto;
+        border-radius:20px;
+        box-shadow: 0px 0px 8px 0px $color-4;
+        padding: 10px;
+        
+        .promptHeader{
+            padding:10px;
+            line-height: 30px;
+            color: $color-1;
+
+            span{
+                float: right;
+                background-color: $color-4;
+                border-radius:100%;
+                width:25px;
+                height:25px;
+                text-align: center;
+                line-height: 28px;
+                color: #9f9f9f;
+                margin: -15px;
+
+                &:hover{
+                    color: $color-1;
+                    cursor: pointer;
+                }
+            }
+        }
+        .promptBody{
+            .grades{
+                width:100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap:10px;
+                justify-items: center;
+                padding-bottom: 10px;
+                .green{color:green;}                
+                .orange{color:orange;}
+                .orangered{color:orangered;}
+                .red{color:red;}
+                .darkred{color:darkred;}
+                .grade{
+                    border-radius:100%;
+                    background-color: $color-4;
+                    width: 45px; height: 45px;
+                    text-align: center;
+                    line-height: 47px;
+                    
+                    &:hover{
+                        cursor: pointer;                      
+                        transition: 0.3s;
+                        box-shadow: 0px 0px 8px 0px $color-4;
+                    }
+                }
+                .grade:last-child{
+                    width: 150px;
+                    border-radius: 25px;
+                    grid-column-start: 2;
+                    grid-column-end: 4;                    
+                }
+
+            }
+        }
+    }
+}
