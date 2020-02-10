@@ -124,22 +124,21 @@
         const body = document.querySelector("body");
 
         body.onload = function(){
-            let subs = getSubjects();
-            console.log(subs);
-        };
-
-        //Function that retrieves data from the the subjects.json file
-        const getSubjects = function(){
-        	let subjects = [];            
-            fetch("data/subjects.json")
-            .then(res =>res.json())
-            .then((data) => { 
-                subjects.push(data);
-                return subjects;
+            getSubjects().then((data) => {
+                // Do the next thing after fetching
+                console.log(data)
             })
         }
 
-
+        //Function that retrieves data from the the subjects.json file
+        const getSubjects = () => {
+            return fetch("data/subjects.json")
+            .then(res => { return res.json() })
+            .then(data => { 
+                return data
+            })
+            .catch(error => console.log(error))
+        }
 
     </script>
 </body>
