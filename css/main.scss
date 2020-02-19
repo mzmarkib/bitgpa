@@ -1,15 +1,20 @@
+*{
+    font-family: "Myriad Pro";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 $color-1: #444;
 $color-2: #0089D2;
 $color-3: #9f9f9f;
 $color-4: #ededed;
 $bg-color: #fcfcfc;
 
+@import 'navbar';
 @import 'gradesBox';
 
-*{
-    font-family: "Myriad Pro";
-    box-sizing: border-box;
-}
+
 form{
     max-width:500px;
     margin: 0 auto;
@@ -27,7 +32,8 @@ body{
     justify-items: normal;
     align-items: center;
     height: 50px;
-    padding:5px;
+    padding-top: 5px;
+    margin-top: 5px;
 
     .sub{
         flex:6;
@@ -120,16 +126,19 @@ body{
 
     .attempt{
         font-family: "Myriad Pro";
-        
-        
           
-          input[type="checkbox"] {
-            
+        input[type="checkbox"] {
+
             &:checked + label {              
-              background-color: $color-4;
-              color: $color-3;
+                background-color: $color-4;
+                color: $color-4;
             }  
-          }
+        }
+    }
+    .subResult{
+        background-color: $color-4;
+        color: $color-4;      
+        
     }
 }
 
@@ -144,4 +153,102 @@ body{
     .yearTitle{
         font-size: 10px;
     }
+}
+
+
+.navbar{
+    border-top: 1px solid $color-4;
+    padding-top: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px 0px 2px 1px $color-4;
+
+    .container{
+        display: grid;
+        max-width: 540px;
+        margin: 0 auto;
+        grid-template-columns: 4fr 4fr 5fr 4fr 4fr;
+        align-content: space-around;
+        justify-content: space-evenly;
+        position: relative;
+
+        .active{
+            box-shadow: 0px -3px 0px 0px $color-2;
+            div{
+                color: $color-2;
+            }            
+        }
+        .item{
+            margin-top: -2px;
+            padding-top: 3px;
+            &:hover:not(.cta_calc){
+                box-shadow: 0px -3px 0px 0px $color-2;
+            }
+            &:hover{                
+                cursor: pointer;
+            }
+        }
+        div{
+            outline:none;
+            position: relative; 
+                       
+
+            &:hover{
+                outline:none;
+            }
+            div{                
+                text-align: center;
+                color: $color-3;
+                font-size: 1em;
+                // text-transform: uppercase;
+
+                img{
+                    margin:auto;
+                    width: 25px;
+
+                }
+                
+            }            
+        }
+        .cta_calc{
+            display: flex;
+
+            div{
+                box-shadow: 0px 0px 2px 1px $color-4;
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                background-color: $color-2;
+                margin: auto;
+                display: flex;
+                margin-top: -30px;
+                
+                img{
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+.header{
+    padding:5px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 2px 1px $color-4;
+    border-bottom: 1px solid $color-4;
+
+    div{
+        font-family: "Fira Code";
+        &:nth-child(1){
+            color: $color-1;
+            font-size: 20px;
+        }
+        &:nth-child(2){
+            color: $color-2;
+            line-height: 25px;
+            font-size: 15px;
+        }
+    }
+
 }

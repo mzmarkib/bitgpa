@@ -9,33 +9,39 @@
 </head>
 <body>
     
-    <form action="">
-
-      
-            
-        <div class="semester">
-            <div class="title yearTitle">YEAR 01</div>
-            <div class="title semesterTitle">SEMESTER 01</div>
-            <div class="subject">
-                <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
-                <div class="subCredits">03</div>
-                <div class="attempt">
-                    <input type="checkbox" id="checkboxOne" value="" checked><label for="checkboxOne">1st</label>
+    <header class="header">
+        <div>Grade Point Average Calculator</div>
+        <div>BIT-UCSC</div>
+    </header>
+    <footer></footer>
+    <main>
+        <section>
+            <form action="">
+                <div class="semester">
+                    <div class="title yearTitle">YEAR 01</div>
+                    <div class="title semesterTitle">SEMESTER 01</div>
+                    <div class="subject">
+                        <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
+                        <div class="subCredits">03</div>
+                        <div class="attempt">
+                            <input type="checkbox" id="checkboxOne" value="" checked><label for="checkboxOne">1st</label>
+                        </div>
+                        <button type="button" data_gpv="-1" class="subResult">SELECT</button>
+                    </div>
+                    <div class="subject disabledSub">
+                        <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
+                        <div class="subCredits">03</div>
+                        <div class="attempt">
+                            <input type="checkbox" id="checkboxTwo" value="" checked><label for="checkboxTwo">1st</label>
+                        </div>
+                        <button type="button" data_gpv="-1" class="subResult">SELECT</button>
+                    </div>
                 </div>
-                <button type="button" data_gpv="-1" class="subResult">SELECT</button>
-            </div>
-            <div class="subject disabledSub">
-                <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
-                <div class="subCredits">03</div>
-                <div class="attempt">
-                    <input type="checkbox" id="checkboxTwo" value="" checked><label for="checkboxTwo">1st</label>
-                </div>
-                <button type="button" data_gpv="-1" class="subResult">SELECT</button>
-            </div>
-        </div>
-        
-        
-    </form>
+            </form>
+        </section>
+    </main>    
+    
+    
     
     <!-- Grades Dialog Box HTML start -->
     <div class="dialogOverlay">        
@@ -64,9 +70,34 @@
                 </div>
             </div>
         </div>
-    </div>
-         
+    </div>         
     <!-- Grades Dialog Box HTML end -->
+
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="item active">
+                <div><img src="img/icons/home1.png"></div>
+                <div>Home</div>
+            </div>
+            <div class="item">
+                <div><img src="img/icons/faq2.png"></div>
+                <div>FAQ</div>
+            </div> 
+            <div class="item cta_calc">
+                <div><img src="img/icons/dash1.png"></div>
+            </div> 
+            <div class="item">
+                <div><img src="img/icons/info3.png"></div>
+                <div>About</div>
+            </div> 
+            <div class="item">
+                <div><img src="img/icons/info2.png"></div>
+                <div>Contact</div>
+            </div>
+        </div>       
+    </nav>
+
     <script>     
 
 
@@ -124,18 +155,20 @@
         const body = document.querySelector("body");
 
         body.onload = function(){
+            //loads the list of subjects
             getSubjects().then((data) => {
-                // Do the next thing after fetching
-                console.log(data)
+                // forEach(data){
+                //     body.innerHTML = data;
+                // }
             })
         }
 
         //Function that retrieves data from the the subjects.json file
-        const getSubjects = () => {
+        const getSubjects = async function() {
             return fetch("data/subjects.json")
             .then(res => { return res.json() })
             .then(data => { 
-                return data
+                return data;
             })
             .catch(error => console.log(error))
         }

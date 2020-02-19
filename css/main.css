@@ -1,3 +1,11 @@
+* {
+  font-family: "Myriad Pro";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .dialogOverlay {
   background-color: #fcfcfc;
   opacity: 0.7;
@@ -13,12 +21,17 @@
 }
 
 .gradesPrompt {
-  opacity: 1;
   background-color: none;
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .gradesPrompt .innerBox {
+  background-color: #fff;
   z-index: 10;
   width: 300px;
   margin: auto;
@@ -107,12 +120,6 @@
   grid-column-end: 4;
 }
 
-* {
-  font-family: "Myriad Pro";
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -137,7 +144,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 50px;
-  padding: 5px;
+  padding-top: 5px;
+  margin-top: 5px;
 }
 
 .subject .sub {
@@ -257,7 +265,12 @@ body {
 
 .disabledSub .attempt input[type="checkbox"]:checked + label {
   background-color: #ededed;
-  color: #9f9f9f;
+  color: #ededed;
+}
+
+.disabledSub .subResult {
+  background-color: #ededed;
+  color: #ededed;
 }
 
 .semester {
@@ -272,5 +285,121 @@ body {
 
 .semester .yearTitle {
   font-size: 10px;
+}
+
+.navbar {
+  border-top: 1px solid #ededed;
+  padding-top: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+}
+
+.navbar .container {
+  display: -ms-grid;
+  display: grid;
+  max-width: 540px;
+  margin: 0 auto;
+  -ms-grid-columns: 4fr 4fr 5fr 4fr 4fr;
+      grid-template-columns: 4fr 4fr 5fr 4fr 4fr;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+}
+
+.navbar .container .active {
+  -webkit-box-shadow: 0px -3px 0px 0px #0089D2;
+          box-shadow: 0px -3px 0px 0px #0089D2;
+}
+
+.navbar .container .active div {
+  color: #0089D2;
+}
+
+.navbar .container .item {
+  margin-top: -2px;
+  padding-top: 3px;
+}
+
+.navbar .container .item:hover:not(.cta_calc) {
+  -webkit-box-shadow: 0px -3px 0px 0px #0089D2;
+          box-shadow: 0px -3px 0px 0px #0089D2;
+}
+
+.navbar .container .item:hover {
+  cursor: pointer;
+}
+
+.navbar .container div {
+  outline: none;
+  position: relative;
+}
+
+.navbar .container div:hover {
+  outline: none;
+}
+
+.navbar .container div div {
+  text-align: center;
+  color: #9f9f9f;
+  font-size: 1em;
+}
+
+.navbar .container div div img {
+  margin: auto;
+  width: 25px;
+}
+
+.navbar .container .cta_calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .container .cta_calc div {
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #0089D2;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -30px;
+}
+
+.navbar .container .cta_calc div img {
+  width: 40px;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  border-bottom: 1px solid #ededed;
+}
+
+.header div {
+  font-family: "Fira Code";
+}
+
+.header div:nth-child(1) {
+  color: #444;
+  font-size: 20px;
+}
+
+.header div:nth-child(2) {
+  color: #0089D2;
+  line-height: 25px;
+  font-size: 15px;
 }
 /*# sourceMappingURL=main.css.map */
