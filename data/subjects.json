@@ -4,7 +4,7 @@
         "subjects": [
             {"code":"IT1105", "name":"Information Systems & Technology", "yer":1, "sem":1, "cred":3, "type": "C"},
             {"code":"IT1205", "name":"Computer Systems I", "yer":1, "sem":1, "cred":3, "type": "C"},
-            {"code":"IT1305", "name":"Web Application Development I", "yer":1, "sem":1, "cred":3, "type": "E"},
+            {"code":"IT1305", "name":"Web Application Development I", "yer":1, "sem":1, "cred":3, "type": "C"},
             {"code":"EN1101", "name":"Communication Skills", "yer":1, "sem":1, "cred":3, "type": "E"},
             {"code":"EN1201", "name":"Introductory Mathematics", "yer":1, "sem":1, "cred":2, "type": "E"},
             {"code":"EN1301", "name":"Personal Computing", "yer":1, "sem":1, "cred":2, "type": "E"}
@@ -43,19 +43,19 @@
         "subjects": [
             {"code":"IT5105", "name":"Professional Issues in IT", "yer":3, "sem":5, "cred":3, "type":"C"},
             {"code":"IT5205", "name":"Information Systems Security", "yer":3, "sem":5, "cred":3, "type":"C"},
-            {"code":"IT5305", "name":"Computer Systems II", "yer":3, "sem":5, "cred":3, "type":"O"},
-            {"code":"IT5405", "name":"Fundamentals of Multimedia", "yer":3, "sem":5, "cred":3, "type":"O"},
-            {"code":"EN5101", "name":"Fundamentals of Management", "yer":3, "sem":5, "cred":2, "type":"C"}
+            {"code":"IT5305", "name":"Computer Systems II", "yer":3, "sem":5, "cred":3, "type":"C"},
+            {"code":"IT5405", "name":"Fundamentals of Multimedia", "yer":3, "sem":5, "cred":3, "type":"C"},
+            {"code":"EN5101", "name":"Fundamentals of Management", "yer":3, "sem":5, "cred":2, "type":"O"}
         ]
     },
     {   "semester":"SEMESTER 06",
         "year": "YEAR 03",
         "subjects": [            
             {"code":"IT6205", "name":"Systems & Network Administration", "yer":3, "sem":6, "cred":3, "type":"C"},
-            {"code":"IT6305", "name":"e-Business Application", "yer":3, "sem":6, "cred":3, "type":"O"},
+            {"code":"IT6305", "name":"e-Business Application", "yer":3, "sem":6, "cred":3, "type":"C"},
             {"code":"IT6405", "name":"Database Systems II", "yer":3, "sem":6, "cred":3, "type":"C"},
-            {"code":"IT6505", "name":"Middleware Architecture", "yer":3, "sem":6, "cred":3, "type":"O"},
-            {"code":"EN6502", "name":"Introduction to Entrepreneurship", "yer":3, "sem":6, "cred":2, "type":"C"}
+            {"code":"IT6505", "name":"Middleware Architecture", "yer":3, "sem":6, "cred":3, "type":"C"},
+            {"code":"EN6502", "name":"Introduction to Entrepreneurship", "yer":3, "sem":6, "cred":2, "type":"O"}
         ]
     },
     {   "semester":"SEMESTER 05 & 06",

@@ -15,29 +15,19 @@
     </header>
     <footer></footer>
     <main>
-        <section>
+        <section class="page home">
             <form action="">
-                <div class="semester">
-                    <div class="title yearTitle">YEAR 01</div>
-                    <div class="title semesterTitle">SEMESTER 01</div>
-                    <div class="subject">
-                        <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
-                        <div class="subCredits">03</div>
-                        <div class="attempt">
-                            <input type="checkbox" id="checkboxOne" value="" checked><label for="checkboxOne">1st</label>
-                        </div>
-                        <button type="button" data_gpv="-1" class="subResult">SELECT</button>
-                    </div>
-                    <div class="subject disabledSub">
-                        <div class="sub"><span class="code">IT1205</span><span class="name">Information Systems & Technology</span></div>
-                        <div class="subCredits">03</div>
-                        <div class="attempt">
-                            <input type="checkbox" id="checkboxTwo" value="" checked><label for="checkboxTwo">1st</label>
-                        </div>
-                        <button type="button" data_gpv="-1" class="subResult">SELECT</button>
-                    </div>
-                </div>
+                
             </form>
+        </section>
+        <section class="page faq">
+            FAQ
+        </section>
+        <section class="page about">
+            About
+        </section>
+        <section class="page contact">
+            Contact
         </section>
     </main>    
     
@@ -76,30 +66,58 @@
 
     <nav class="navbar">
         <div class="container">
-            <div class="item active">
-                <div><img src="img/icons/home1.png"></div>
+            <div name="home" class="item active">
+                <div name="home"><img src="img/icons/home1.png"></div>
                 <div>Home</div>
             </div>
-            <div class="item">
-                <div><img src="img/icons/faq2.png"></div>
+            <div name="faq" class="item">
+                <div name="home"><img src="img/icons/faq2.png"></div>
                 <div>FAQ</div>
             </div> 
-            <div class="item cta_calc">
+            <div name="calc" class="item cta_calc">
                 <div><img src="img/icons/dash1.png"></div>
             </div> 
-            <div class="item">
-                <div><img src="img/icons/info3.png"></div>
+            <div name="about" class="item">
+                <div name="home"><img src="img/icons/info3.png"></div>
                 <div>About</div>
             </div> 
-            <div class="item">
-                <div><img src="img/icons/info2.png"></div>
+            <div name="contact" class="item">
+                <div name="home"><img src="img/icons/info2.png"></div>
                 <div>Contact</div>
             </div>
         </div>       
     </nav>
 
     <script>     
+        openPage(".home");
+        function openPage(page){
+            let pages = document.querySelectorAll(".page");
+            for (let i = 0; i < pages.length; ++i) {
+                pages[i].style.display= "none";
+            }
 
+            page = document.querySelector(page);
+            page.style.display = "block";
+
+        }
+
+        // Navigation click events (to be completed)
+        let navLinks = document.querySelectorAll(".navbar .item");        
+        navLinks.forEach(function(link){            
+            link.addEventListener("click",function(e){
+                let attr = e.currentTarget.getAttribute('name');                
+                if(attr !== "calc"){
+                    openPage("." + attr);
+                    navLinks.forEach(function(item){
+                        item.classList.remove("active");
+                    });
+                    e.currentTarget.classList.add("active");
+                }else{
+                    alert('calculated');
+                }
+            });
+        });
+        
 
         //Custom Grades Prompt
         let clickedSub; //the sebject that was clicked to changed
@@ -129,14 +147,7 @@
                 });
             });
 
-        //Opens Grades Prompt for each SELECT Button when Clicked
-        const resultBtns = document.querySelectorAll(".subResult");
-
-        resultBtns.forEach(function(resultBtn){
-            resultBtn.addEventListener("click",function(e){
-                Prompt.render(e);
-            });
-        });
+        
 
         // Changes the Values of the SELECT button when a result is chosen
         const gradeBtns = document.querySelectorAll(".grades .grade");
@@ -157,14 +168,43 @@
         body.onload = function(){
             //loads the list of subjects
             getSubjects().then((data) => {
-                // forEach(data){
-                //     body.innerHTML = data;
-                // }
+                let subjectSrting = ""; //initialize variable that holds the html of all the subjects semester wise
+
+                // loops around each semester                
+                data.forEach(function(semester){                    
+                    
+                    subjectSrting += "<div class='semester'> <div class='title yearTitle'>"+ semester.year +"</div> <div class='title semesterTitle'>"+ semester.semester +"</div>";
+
+                    // loops around each subject for each semester
+                    semester.subjects.forEach(function (subject){
+                        let dis = ""
+                        if(subject.type != "C"){
+                            dis = "disabledSub";
+                        }
+                        subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'>" + subject.cred + "</div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st</label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
+                    });                    
+
+                    subjectSrting += "</div>";
+
+                });
+                let form = document.querySelector(".home form");
+                form.innerHTML = subjectSrting;
+
+                //Opens Grades Prompt for each SELECT Button when Clicked
+                const resultBtns = document.querySelectorAll(".subResult");
+
+                resultBtns.forEach(function(resultBtn){
+                    resultBtn.addEventListener("click",function(e){
+                        Prompt.render(e);
+                    });
+                });
+                
             })
         }
 
         //Function that retrieves data from the the subjects.json file
-        const getSubjects = async function() {
+        let page = document.querySelector(".home form");
+        const getSubjects = function() {
             return fetch("data/subjects.json")
             .then(res => { return res.json() })
             .then(data => { 
