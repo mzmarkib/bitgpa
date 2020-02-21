@@ -16,18 +16,45 @@
     <footer></footer>
     <main>
         <section id="home" class="page home">
-            <form action="">
+            <form id="gpaForm">
                 
             </form>
         </section>
         <section class="page faq">
-            FAQ
+            <div class="container">
+                <div class="title">FAQ</div>
+                <div class="desc">Deals with a few questions that are frequently arise in students and are not sometimes answered.If you have any further questions you can ask them via the details in the contact page. We hope they are helpful...</div>
+                <div class="faq-touple">
+                    <div class="question">How many times can I repeat a subject?</div>
+                    <div class="answer">You can have upto Three(3) attempts on a particular subject.</div>
+                </div>
+                <div class="faq-touple">
+                    <div class="question">What is the highest grade that can I get when I attempt a particular subject for the second time?</div>
+                    <div class="answer">You can obatain any grade upto an A, <strong>but</strong> when accounting the Grade Point Value (GPV) for that particular subject can be upto 2.00 (GPV of a C grade).</div>
+                </div>
+                <div class="faq-touple">
+                    <div class="question">What is the Difference between an A grade and an A+ grade</div>
+                    <div class="answer">Both A and A+ grades carries the same Grade Point Value (GPV) values of 4.00, <strong>but</strong> When calculating GPA for class awarding, and A+ will be given a Grade Point Value (GPV) of 4.25.</div>
+                </div>
+                <div class="faq-touple">
+                    <div class="question">If I applied for a particular Exam and did not attend the exam, will it still count as an Attempt?</div>
+                    <div class="answer">No, If you are absent for an absent for an exam it will be counted as NOT SAT. On the other hand you are expected to produce a Medical for your absence.</div>
+                </div>
+                <div class="faq-touple">
+                    <div class="question">What is a Credit?</div>
+                    <div class="answer">It is the measure of how much content a particular subject carries. A credit is equal to 15 hours of lectures or 30-45 hours of practical or an equivalent combination of lectures.</div>
+                </div>                
+            </div>
         </section>
         <section class="page about">
-            About
+            <div class="container">
+                <div class="title">About</div>
+            </div>
         </section>
         <section class="page contact">
-            Contact
+            <div class="container">
+                <div class="title">Contact</div>
+            </div>
         </section>
     </main>    
     
@@ -96,14 +123,17 @@
             <div class="gpaDetails">
                 <p>Total Credits : <span id="totCredits">15</span></p>
                 <p>Subjects Calculated  : <span id="totSubjects">15</span></p>
-                <p>Expected Class: <span id="classExp">Above Average</span></p>
+                <p>Expected Class: <span id="classExp">1st Class</span></p>
             </div>
         </div>
     </div>
     
 
     <script>     
-        openPage(".home");
+        //declarations
+        const gpaResultBox = new gpaBox();
+
+        openPage(".faq");
         function openPage(page){
             let pages = document.querySelectorAll(".page");
             for (let i = 0; i < pages.length; ++i) {
@@ -127,7 +157,11 @@
                     });
                     e.currentTarget.classList.add("active");
                 }else{
-                    alert('calculated');
+                    if(!gpaResultBox.status){
+                        gpaResultBox.open();
+                    }else{
+                        gpaResultBox.close();
+                    }
                 }
             });
         });
@@ -155,13 +189,12 @@
         var Prompt = new GradesPrompt();
 
         const closeBtns = document.querySelectorAll(".dialogOverlay, .promptClose");
-            closeBtns.forEach(function(closeBtn){
-                closeBtn.addEventListener("click",function(e){
-                    Prompt.close();
-                });
-            });
 
-        
+        closeBtns.forEach(function(closeBtn){
+            closeBtn.addEventListener("click",function(e){
+                Prompt.close();
+            });
+        });        
 
         // Changes the Values of the SELECT button when a result is chosen
         const gradeBtns = document.querySelectorAll(".grades .grade");
@@ -216,30 +249,37 @@
                 
             })
         }
+        
+        //Object and controls for GPA result Box
+        function gpaBox () {
+            this.object = document.querySelector(".gpaBox");
+            this.status = false;            
 
+            
+
+            this.open = function(){ 
+                this.object.style.display = "block";
+                this.status =  true;
+            },
+            this.close = function(){
+                this.object.style.display = "none";
+                this.status = false;
+            }
+        }
+        //Event listener for click on the gpaResultBox close Btn
+        const gpaClose = document.querySelectorAll(".gpaClose");
+        gpaClose.forEach(function(closeBtn){
+            closeBtn.addEventListener("click",function(e){
+                gpaResultBox.close();
+            });
+        });     
 
         function calculateGpa(){
             let subjects = document.getElementsByClassName("home")[0].getElementsByClassName('subject');
             // subjects = subjects.querySelectorAll('.subject');
             // console.log(subjects.length);
             
-            console.log(subjects);
-
-
-
-
-
-            // for(var i=0; i<arr[0].length; i++){
-            //     // get the gpv values and see if the chechbox is checked
-            //     console.log("a");
-            // }
-            
-            
-            
-            
-        
-            
-                                
+            console.log(document.getElementById("gpaForm").length);                                
         }
 
         calculateGpa();

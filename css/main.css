@@ -389,6 +389,7 @@ body {
 
 .gpaBox {
   position: fixed;
+  display: none;
   bottom: 60px;
   z-index: 8;
   width: 100%;
@@ -478,5 +479,54 @@ body {
   color: #0089D2;
   line-height: 25px;
   font-size: 15px;
+}
+
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  color: #444;
+}
+
+.page .container {
+  margin: auto;
+  max-width: 500px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  border-radius: 5px;
+}
+
+.page .title {
+  text-align: center;
+  padding: 15px 15px 5px 15px;
+  font-size: 1.5em;
+}
+
+.page .desc {
+  padding: 0 10px;
+  color: #9f9f9f;
+}
+
+.faq .faq-touple {
+  margin: 15px 10px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ededed;
+}
+
+.faq .faq-touple:hover {
+  border: 1px solid #0089D2;
+}
+
+.faq .faq-touple .question {
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+}
+
+.faq .faq-touple .answer {
+  color: #9f9f9f;
 }
 /*# sourceMappingURL=main.css.map */
