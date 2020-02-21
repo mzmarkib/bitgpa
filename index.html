@@ -22,8 +22,8 @@
         </section>
         <section class="page faq">
             <div class="container">
-                <div class="title">FAQ</div>
-                <div class="desc">Deals with a few questions that are frequently arise in students and are not sometimes answered.If you have any further questions you can ask them via the details in the contact page. We hope they are helpful...</div>
+                <div class="pageTitle">FAQ</div>
+                <div class="pageDesc">Deals with a few questions that are frequently arise in students and are not sometimes answered.If you have any further questions you can ask them via the details in the contact page. We hope they are helpful...</div>
                 <div class="faq-touple">
                     <div class="question">How many times can I repeat a subject?</div>
                     <div class="answer">You can have upto Three(3) attempts on a particular subject.</div>
@@ -48,12 +48,50 @@
         </section>
         <section class="page about">
             <div class="container">
-                <div class="title">About</div>
+                <div class="pageTitle">About</div>
+                <div class="pageDesc">
+                    <p>This App is was created on the sole purpose of "Practice", it might change, but not yet. And also I built this app because I think that there was no GPA Calculator that can calculate the GPA <strong>
+                        cumulatively</strong>  Hopefuly it might help me or someone following BIT-UCSC.</p>
+                    <p>This Web App was created using only pure HTML, CSS and JavaScript. No Frameworks or Libraries were used during the process. No... not even jQuery!</p>
+                    <p>Enough about the app, lets' take a look at some info that you might need.</p>
+                </div>
+                <section>
+                    <h1>Calculation of Grade Point Average</h1>
+                    <p>Grade Point Values associated with each grade are as shown in the Table 1. These GPV values are used to compute GPA as using the following formulae:</p>
+                    <img src="img/gpa-calculation.png" alt="bit-gpa-calculation-formulae">
+                </section>
+                
+                <section>
+                    <h1>Grade Point Values (GPV)</h1>
+                    <p>The Grade you score has a particular value of Grade Point Value. It is used to calculated during the GPA calculation process. They are as given in Table 1.</p>
+                    <table> <tbody> <tr> <td><strong>Range of Score</strong></td><td><strong>Grade</strong></td><td><strong>GPV</strong></td><td><strong>Attainment</strong></td></tr><tr> <td>90 &ndash;&nbsp;100</td><td>A+</td><td>4.00<a href="#"> [1]</a></td><td rowspan="3">Superior</td></tr><tr> <td>80 &ndash;&nbsp;89</td><td>A</td><td>4.00</td></tr><tr> <td>75 &ndash;&nbsp;79</td><td>A-</td><td>3.75</td></tr><tr> <td>70 &ndash;&nbsp;74</td><td>B+</td><td>3.25</td><td rowspan="3">Meritorious</td></tr><tr> <td>65 &ndash;&nbsp;69</td><td>B</td><td>3.00</td></tr><tr> <td>60 &ndash;&nbsp;64</td><td>B-</td><td>2.75</td></tr><tr> <td>55 &ndash; 59</td><td>C+</td><td>2.25</td><td rowspan="3">Adequate</td></tr><tr> <td>50 &ndash;&nbsp;54</td><td>C</td><td>2.00</td></tr><tr> <td>45 &ndash;&nbsp;49</td><td>C-</td><td>1.75</td></tr><tr> <td>40 &ndash;&nbsp;44</td><td>D+</td><td>1.25</td><td rowspan="3">Minimal</td></tr><tr> <td>30 &ndash; 39</td><td>D</td><td>1.00</td></tr><tr> <td>20 &ndash;&nbsp;29</td><td>D-</td><td>0.75</td></tr><tr> <td>00 &ndash; 19</td><td>E</td><td>0.00</td><td>Failure</td></tr></tbody><caption align="bottom">Table 1 - GPV values for associated Grades</caption></table>
+                    <p><a href="#">[1]</a> When calculating classes, A+ will be given a Grade Point Value of 4.25</p>
+                </section>
+                <section>
+                    <h1>Award of Honours and Classes</h1>
+                    <p>A Student qualifying for the award of a degree both general (3 year) and honours (4 year)â€”by completing all the relevant requirements shall also be qualified for the award of a class as follows.</p>
+                    <p class="indent">(a). First Class for obtaining a minimum overall GPA of 3.50</p>
+                    <p class="indent">(b). Second Class (Upper Division) – for obtaining a minimum overall GPA of 3.25</p>
+                    <p class="indent">(c). Second Class (Lower Division) – for obtaining a minimum overall GPA of 3.00</p>
+                </section>
             </div>
         </section>
         <section class="page contact">
             <div class="container">
-                <div class="title">Contact</div>
+                <div class="pageTitle">Contact</div>
+                <div class="dp">
+                    <img src="img/dp_plain.jpg" alt="@mzmarkib">
+                </div>
+                <div class="cname">M. Z. Mohammed Arkib</div>
+
+                <div class="chandle">@mzmarkib</div>
+
+                <div class="pageDesc">
+                    <p>You find me on any Social Media using the handle   <a href="#" target="_top">@mzmarkib</a> or can get in touch with me via email: <a href="mailto:mzmarkib@gmail.com?Subject=Hello%20from%20bitGpa" target="_top">mzmarkib@gmail.com</a></p>
+                </div>
+
+                
+                
             </div>
         </section>
     </main>    
@@ -133,7 +171,7 @@
         //declarations
         const gpaResultBox = new gpaBox();
 
-        openPage(".faq");
+        openPage(".home");
         function openPage(page){
             let pages = document.querySelectorAll(".page");
             for (let i = 0; i < pages.length; ++i) {

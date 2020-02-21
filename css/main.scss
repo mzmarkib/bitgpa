@@ -184,11 +184,12 @@ body{
         border-radius: 5px;
         overflow: hidden;
         box-shadow: 0px 0px 2px 1px $color-4;
+        position: relative;
         
         .gpaClose{
             position: absolute;
-            top: 30px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             width: 20px;
             height: 20px;
             border-radius: 100%;
@@ -252,26 +253,38 @@ body{
 .page{
     display: flex;
     padding: 5px;
-    color: $color-1;
+    color: $color-1;    
+
     .container{
         margin: auto;
         max-width: 500px;
         background-color: #fff;
         box-shadow: 0px 0px 2px 1px $color-4;
-        border-radius: 5px;
+        border-radius: 5px;        
     }
-    .title{
+    .pageTitle{
         text-align: center;
         padding: 15px 15px 5px 15px;
         font-size: 1.5em;
     }
-    .desc{
+    .pageDesc{
         padding: 0 10px;
         color: $color-3;
+    }
+    p{
+        &:not(.indent){
+            margin: 5px auto;
+        }
+    }
+    a{
+        color: $color-2;
     }
 }
 .faq{
     
+    .container{
+        padding-bottom: 10px;
+    }
     .faq-touple{
         margin: 15px 10px;
         padding: 5px;
@@ -290,6 +303,90 @@ body{
         .answer{
             color: $color-3;
         }
+    }
+}
+
+.about{
+    section{
+        margin: 15px 10px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        p{
+            color: $color-3;
+        }
+        img{
+            margin: auto;
+        }
+        table,td,th{
+            border: 1px solid $color-3;
+        }
+        table{
+            border-collapse: collapse;
+            border-radius: 5px;
+            width: 100%;
+
+            td{
+                padding:3px;
+                color: $color-3;
+
+                strong{
+                    font-weight: 500;
+                    color:$color-1;
+                }
+            }
+            caption{
+                padding-top: 3px;
+                font-style: oblique;
+                color: $color-3;
+                font-size: 0.75em;
+            }
+            
+        }
+        .indent{
+            padding-left: 15px;;
+        }
+    }
+}
+.contact{
+    display: flex;
+
+    .dp{
+        width: 130px;
+        height: 130px;
+        margin:auto;
+        img{
+            width: 130px;
+        }
+    }
+    .container{
+        padding-bottom: 10px;
+    }
+    .cname{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 700;
+        color: $color-3;
+    }
+    .chandle{
+        text-align: center;
+        font-size: 2.3em;
+        font-weight: 700;
+        color: $color-3;
+
+        &::first-letter{
+            color: $color-2;
+        }
+    }
+
+    p{
+        color: $color-3;
     }
 }
 
