@@ -6,6 +6,101 @@
   padding: 0;
 }
 
+.navbar {
+  border-top: 1px solid #ededed;
+  padding-top: 5px;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  background-color: #fff;
+}
+
+.navbar .container {
+  display: -ms-grid;
+  display: grid;
+  max-width: 540px;
+  margin: 0 auto;
+  -ms-grid-columns: 4fr 4fr 5fr 4fr 4fr;
+      grid-template-columns: 4fr 4fr 5fr 4fr 4fr;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+  z-index: 15px;
+}
+
+.navbar .container .active {
+  -webkit-box-shadow: 0px -3px 0px 0px #0089D2;
+          box-shadow: 0px -3px 0px 0px #0089D2;
+}
+
+.navbar .container .active div {
+  color: #0089D2;
+}
+
+.navbar .container .item {
+  margin-top: -2px;
+  padding-top: 3px;
+}
+
+.navbar .container .item:hover:not(.cta_calc) {
+  -webkit-box-shadow: 0px -3px 0px 0px #0089D2;
+          box-shadow: 0px -3px 0px 0px #0089D2;
+}
+
+.navbar .container .item:hover {
+  cursor: pointer;
+}
+
+.navbar .container div {
+  outline: none;
+  position: relative;
+}
+
+.navbar .container div:hover {
+  outline: none;
+}
+
+.navbar .container div div {
+  text-align: center;
+  color: #9f9f9f;
+  font-size: 1em;
+}
+
+.navbar .container div div img {
+  margin: auto;
+  width: 25px;
+}
+
+.navbar .container .cta_calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .container .cta_calc div {
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #0089D2;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -30px;
+}
+
+.navbar .container .cta_calc div img {
+  width: 40px;
+}
+
 .dialogOverlay {
   background-color: #fcfcfc;
   opacity: 0.7;
@@ -132,10 +227,6 @@ form {
 
 body {
   background-color: #fcfcfc;
-}
-
-body .closePage {
-  display: none !important;
 }
 
 .page {
@@ -296,98 +387,73 @@ body .closePage {
   font-size: 10px;
 }
 
-.navbar {
-  border-top: 1px solid #ededed;
-  padding-top: 5px;
+.gpaBox {
   position: fixed;
-  bottom: 0;
-  z-index: 10;
+  bottom: 60px;
+  z-index: 8;
   width: 100%;
+  padding: 10px;
+}
+
+.gpaBox .container {
+  margin: 10px auto;
+  background-color: #fff;
+  max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  overflow: hidden;
   -webkit-box-shadow: 0px 0px 2px 1px #ededed;
           box-shadow: 0px 0px 2px 1px #ededed;
-  background-color: #fff;
 }
 
-.navbar .container {
-  display: -ms-grid;
-  display: grid;
-  max-width: 540px;
-  margin: 0 auto;
-  -ms-grid-columns: 4fr 4fr 5fr 4fr 4fr;
-      grid-template-columns: 4fr 4fr 5fr 4fr 4fr;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  position: relative;
+.gpaBox .container .gpaClose {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #ededed;
+  text-align: center;
+  padding-top: 1px;
+  color: #9f9f9f;
 }
 
-.navbar .container .active {
-  -webkit-box-shadow: 0px -3px 0px 0px #0089D2;
-          box-shadow: 0px -3px 0px 0px #0089D2;
-}
-
-.navbar .container .active div {
-  color: #0089D2;
-}
-
-.navbar .container .item {
-  margin-top: -2px;
-  padding-top: 3px;
-}
-
-.navbar .container .item:hover:not(.cta_calc) {
-  -webkit-box-shadow: 0px -3px 0px 0px #0089D2;
-          box-shadow: 0px -3px 0px 0px #0089D2;
-}
-
-.navbar .container .item:hover {
+.gpaBox .container .gpaClose:hover {
+  color: #444;
   cursor: pointer;
 }
 
-.navbar .container div {
-  outline: none;
-  position: relative;
-}
-
-.navbar .container div:hover {
-  outline: none;
-}
-
-.navbar .container div div {
-  text-align: center;
-  color: #9f9f9f;
-  font-size: 1em;
-}
-
-.navbar .container div div img {
-  margin: auto;
-  width: 25px;
-}
-
-.navbar .container .cta_calc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.navbar .container .cta_calc div {
-  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
-          box-shadow: 0px 0px 2px 1px #ededed;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
+.gpaBox .container .gpaResult {
+  width: 150px;
   background-color: #0089D2;
-  margin: auto;
+  -webkit-clip-path: circle(150px at 0% 50%);
+          clip-path: circle(150px at 0% 50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: -30px;
 }
 
-.navbar .container .cta_calc div img {
-  width: 40px;
+.gpaBox .container .gpaResult p {
+  margin: auto;
+  font-size: 50px;
+  color: #ededed;
+}
+
+.gpaBox .container .gpaDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  color: #444;
 }
 
 .header {

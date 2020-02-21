@@ -24,9 +24,6 @@ form{
     padding:5px;
 }
 body{
-    .closePage{
-        display: none !important;
-    }
     background-color: $bg-color;
 }
 .page{
@@ -163,82 +160,69 @@ body{
 }
 
 
-.navbar{
-    border-top: 1px solid $color-4;
-    padding-top: 5px;
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
-    width: 100%;
-    box-shadow: 0px 0px 2px 1px $color-4;
-    background-color: #fff;;
 
+
+
+
+.gpaBox{
+    position: fixed;
+    bottom: 60px;
+    z-index: 8;
+    width: 100%;
+    padding: 10px;
+
+       
 
     .container{
-        display: grid;
-        max-width: 540px;
-        margin: 0 auto;
-        grid-template-columns: 4fr 4fr 5fr 4fr 4fr;
-        align-content: space-around;
-        justify-content: space-evenly;
-        position: relative;
-
-        .active{
-            box-shadow: 0px -3px 0px 0px $color-2;
-            div{
-                color: $color-2;
-            }            
-        }
-        .item{
-            margin-top: -2px;
-            padding-top: 3px;
-            &:hover:not(.cta_calc){
-                box-shadow: 0px -3px 0px 0px $color-2;
-            }
-            &:hover{                
+        margin: 10px auto;
+        background-color: #fff;
+        max-width: 600px;
+        display: flex;
+        height: 200px;
+        border: 1px solid $color-4;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0px 0px 2px 1px $color-4;
+        
+        .gpaClose{
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: $color-4;
+            text-align: center;
+            padding-top: 1px;
+            color:$color-3;
+            
+            &:hover{
+                color: $color-1;
                 cursor: pointer;
             }
-        }
-        div{
-            outline:none;
-            position: relative; 
-                       
+        } 
 
-            &:hover{
-                outline:none;
-            }
-            div{                
-                text-align: center;
-                color: $color-3;
-                font-size: 1em;
-                // text-transform: uppercase;
-
-                img{
-                    margin:auto;
-                    width: 25px;
-
-                }
-                
-            }            
-        }
-        .cta_calc{
+        .gpaResult{
+            width: 150px;
+            background-color: $color-2;
+            clip-path: circle(150px at 0% 50%);
             display: flex;
 
-            div{
-                box-shadow: 0px 0px 2px 1px $color-4;
-                width: 50px;
-                height: 50px;
-                border-radius: 100%;
-                background-color: $color-2;
+            p{
                 margin: auto;
-                display: flex;
-                margin-top: -30px;
-                
-                img{
-                    width: 40px;
-                }
+                font-size: 50px;
+                color: $color-4;
             }
+            
         }
+
+        .gpaDetails{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            color: $color-1;
+        }
+
     }
 }
 .header{
@@ -262,3 +246,5 @@ body{
     }
 
 }
+
+

@@ -15,7 +15,7 @@
     </header>
     <footer></footer>
     <main>
-        <section class="page home">
+        <section id="home" class="page home">
             <form action="">
                 
             </form>
@@ -85,8 +85,22 @@
                 <div name="home"><img src="img/icons/info2.png"></div>
                 <div>Contact</div>
             </div>
-        </div>       
+        </div>                       
     </nav>
+    <div class="gpaBox">
+        <div class="container">
+            <div class="gpaClose">x</div>
+            <div class="gpaResult">
+                <p>3.75</p>
+            </div>
+            <div class="gpaDetails">
+                <p>Total Credits : <span id="totCredits">15</span></p>
+                <p>Subjects Calculated  : <span id="totSubjects">15</span></p>
+                <p>Expected Class: <span id="classExp">Above Average</span></p>
+            </div>
+        </div>
+    </div>
+    
 
     <script>     
         openPage(".home");
@@ -183,10 +197,11 @@
                         }
                         subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'>" + subject.cred + "</div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st</label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
                     });                    
-
+                    
                     subjectSrting += "</div>";
-
-                });
+                    
+                });                
+                
                 let form = document.querySelector(".home form");
                 form.innerHTML = subjectSrting;
 
@@ -202,10 +217,37 @@
             })
         }
 
+
+        function calculateGpa(){
+            let subjects = document.getElementsByClassName("home")[0].getElementsByClassName('subject');
+            // subjects = subjects.querySelectorAll('.subject');
+            // console.log(subjects.length);
+            
+            console.log(subjects);
+
+
+
+
+
+            // for(var i=0; i<arr[0].length; i++){
+            //     // get the gpv values and see if the chechbox is checked
+            //     console.log("a");
+            // }
+            
+            
+            
+            
+        
+            
+                                
+        }
+
+        calculateGpa();
+
         //Function that retrieves data from the the subjects.json file
         let page = document.querySelector(".home form");
-        const getSubjects = function() {
-            return fetch("data/subjects.json")
+        const getSubjects = async function() {
+            return await fetch("data/subjects.json")
             .then(res => { return res.json() })
             .then(data => { 
                 return data;
