@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>GPA Calculator - BIT (UCSC)</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -80,14 +80,14 @@
             <div class="container">
                 <div class="pageTitle">Contact</div>
                 <div class="dp">
-                    <img src="img/dp_plain.jpg" alt="@mzmarkib">
+                    <!-- <img src="img/dp_plain.jpg" alt="@mzmarkib"> -->
                 </div>
                 <div class="cname">M. Z. Mohammed Arkib</div>
 
                 <div class="chandle">@mzmarkib</div>
 
                 <div class="pageDesc">
-                    <p>You find me on any Social Media using the handle   <a href="#" target="_top">@mzmarkib</a> or can get in touch with me via email: <a href="mailto:mzmarkib@gmail.com?Subject=Hello%20from%20bitGpa" target="_top">mzmarkib@gmail.com</a></p>
+                    <p>You find me on any Social Media using the handle <a href="https://www.google.com/search?q=%40mzmarkib" target="_blank">@mzmarkib</a></p>
                 </div>
 
                 
@@ -197,6 +197,7 @@
                 }else{
                     if(!gpaResultBox.status){
                         gpaResultBox.open();
+                        calculateGpa();
                     }else{
                         gpaResultBox.close();
                     }
@@ -266,8 +267,9 @@
                         if(subject.type != "C"){
                             dis = "disabledSub";
                         }
-                        subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'>" + subject.cred + "</div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st</label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
+                        subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'>" + subject.cred + "<span class='tooltip ttcredit'>Credit Value</span></div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st<span class='tooltip ttattempt'>Attempt</span></label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
                     });                    
+                    
                     
                     subjectSrting += "</div>";
                     
@@ -275,7 +277,7 @@
                 
                 let form = document.querySelector(".home form");
                 form.innerHTML = subjectSrting;
-
+                
                 //Opens Grades Prompt for each SELECT Button when Clicked
                 const resultBtns = document.querySelectorAll(".subResult");
 
@@ -284,16 +286,27 @@
                         Prompt.render(e);
                     });
                 });
+
+                const checkboxes = document.querySelectorAll(".attempt");
                 
+                checkboxes.forEach(function(check){
+                    check.addEventListener("click",function(e){
+                        if(!e.currentTarget.querySelector("input").checked){
+                            e.currentTarget.querySelector("label").innerHTML = "2ND";
+                        }else{
+                            e.currentTarget.querySelector("label").innerHTML = "1ST";
+                        }
+
+                        
+                    });
+                });
             })
         }
         
         //Object and controls for GPA result Box
         function gpaBox () {
             this.object = document.querySelector(".gpaBox");
-            this.status = false;            
-
-            
+            this.status = false;           
 
             this.open = function(){ 
                 this.object.style.display = "block";
@@ -313,14 +326,44 @@
         });     
 
         function calculateGpa(){
-            let subjects = document.getElementsByClassName("home")[0].getElementsByClassName('subject');
+            let subjects = document.querySelectorAll(".subject:not(.disabledSub)");
             // subjects = subjects.querySelectorAll('.subject');
             // console.log(subjects.length);
+
+            let totCredits = 0;
+            let totSubjects = 0;
+            let expClass = "";
+            let cumGpvCred = 0;
+            let gpa = 0.00;
             
-            console.log(document.getElementById("gpaForm").length);                                
+            subjects.forEach(function (subject){
+                let subCredit = subject.querySelector(".subCredits").innerHTML;
+                let resultGpv = subject.querySelector(".subResult").getAttribute("data_gpv");
+                let fAttempt = subject.querySelector("input[type='checkbox']").checked;
+
+                // console.log(subCredit + "," + resultGpv + "," + fAttempt);
+                
+                //filters out the subjects that were done
+                if(resultGpv>=0){
+                    //sets the gpv if second attempt
+                    if(!fAttempt){
+                        if(resultGpv>2){
+                            resultGpv = 2;
+                        }
+                    }
+
+                    cumGpvCred += (resultGpv * subCredit);
+
+                    totCredits += Number(subCredit);
+                }
+ 
+            });
+            gpa = (cumGpvCred / totCredits);
+            gpa = Math.round(gpa*100)/100;
+            document.querySelector(".gpaResult p").innerHTML = gpa;                           
         }
 
-        calculateGpa();
+        
 
         //Function that retrieves data from the the subjects.json file
         let page = document.querySelector(".home form");

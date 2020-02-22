@@ -54,7 +54,15 @@ body{
         }
     }
     .subCredits{
-        flex:1;
+        // flex:1;
+        // margin: auto;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        width: 30px;
+        border: 1px solid $color-3;
+        border-radius: 100%;
     }
     .attempt{
         flex:1;
@@ -388,6 +396,36 @@ body{
     p{
         color: $color-3;
     }
+}
+
+.subCredits, .attempt label{
+    position: relative;
+
+    &:hover .tooltip{
+        visibility: visible;
+    }
+} 
+
+.tooltip{
+    visibility: hidden;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid $color-4;
+    padding: 0 5px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 1px $color-4;
+    transition: 0.5s;
+    transition-delay: 1s;
+    color: $color-3;
+}
+.ttcredit{
+    top: -15px;
+    left: -95px;
+}
+.ttattempt{
+    top: -15px;
+    left: 30px;
 }
 
 

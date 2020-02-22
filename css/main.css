@@ -272,9 +272,13 @@ body {
 }
 
 .subject .subCredits {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #9f9f9f;
+  border-radius: 100%;
 }
 
 .subject .attempt {
@@ -640,5 +644,40 @@ body {
 
 .contact p {
   color: #9f9f9f;
+}
+
+.subCredits, .attempt label {
+  position: relative;
+}
+
+.subCredits:hover .tooltip, .attempt label:hover .tooltip {
+  visibility: visible;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ededed;
+  padding: 0 5px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 2px 1px #ededed;
+          box-shadow: 0px 0px 2px 1px #ededed;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  color: #9f9f9f;
+}
+
+.ttcredit {
+  top: -15px;
+  left: -95px;
+}
+
+.ttattempt {
+  top: -15px;
+  left: 30px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -61,7 +61,7 @@
     {   "semester":"SEMESTER 05 & 06",
         "year": "YEAR 03",
         "subjects": [            
-            {"code":"IT6105", "name":"Software Development Project 5 And 6", "yer":3, "sem":6, "cred":8, "type":"C"}
+            {"code":"IT6105", "name":"Software Development Project", "yer":3, "sem":6, "cred":8, "type":"C"}
         ]
     }
 ]
