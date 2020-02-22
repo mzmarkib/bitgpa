@@ -285,7 +285,7 @@
                     });
                 });
                 
-            })
+            }).then(() => calculateGpa());
         }
         
         //Object and controls for GPA result Box
@@ -315,12 +315,12 @@
         function calculateGpa(){
             let subjects = document.getElementsByClassName("home")[0].getElementsByClassName('subject');
             // subjects = subjects.querySelectorAll('.subject');
-            // console.log(subjects.length);
+            console.log(subjects.length);
             
             console.log(document.getElementById("gpaForm").length);                                
         }
 
-        calculateGpa();
+        //calculateGpa();
 
         //Function that retrieves data from the the subjects.json file
         let page = document.querySelector(".home form");
