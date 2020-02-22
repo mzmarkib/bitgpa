@@ -69,7 +69,7 @@
                 </section>
                 <section>
                     <h1>Award of Honours and Classes</h1>
-                    <p>A Student qualifying for the award of a degree both general (3 year) and honours (4 year)â€”by completing all the relevant requirements shall also be qualified for the award of a class as follows.</p>
+                    <p>A Student qualifying for the award of a degree general (3 year) by completing all the relevant requirements shall also be qualified for the award of a class as follows.</p>
                     <p class="indent">(a). First Class for obtaining a minimum overall GPA of 3.50</p>
                     <p class="indent">(b). Second Class (Upper Division) – for obtaining a minimum overall GPA of 3.25</p>
                     <p class="indent">(c). Second Class (Lower Division) – for obtaining a minimum overall GPA of 3.00</p>
@@ -158,10 +158,13 @@
             <div class="gpaResult">
                 <p>3.75</p>
             </div>
-            <div class="gpaDetails">
+            <div style="display:none" class="gpaDetails gpaResultSection">
                 <p>Total Credits : <span id="totCredits">15</span></p>
                 <p>Subjects Calculated  : <span id="totSubjects">15</span></p>
                 <p>Expected Class: <span id="classExp">1st Class</span></p>
+            </div>
+            <div class="gpaDetails gpaError">
+                <p>Please Select your grades for the subjects that you sat for.</p>
             </div>
         </div>
     </div>
@@ -267,7 +270,7 @@
                         if(subject.type != "C"){
                             dis = "disabledSub";
                         }
-                        subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'>" + subject.cred + "<span class='tooltip ttcredit'>Credit Value</span></div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st<span class='tooltip ttattempt'>Attempt</span></label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
+                        subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'><span class='cred'>" + subject.cred + "</span><span class='tooltip ttcredit'>Credit Value</span></div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st<span class='tooltip ttattempt'>Attempt</span></label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
                     });                    
                     
                     
@@ -296,8 +299,6 @@
                         }else{
                             e.currentTarget.querySelector("label").innerHTML = "1ST";
                         }
-
-                        
                     });
                 });
             })
@@ -337,12 +338,11 @@
             let gpa = 0.00;
             
             subjects.forEach(function (subject){
-                let subCredit = subject.querySelector(".subCredits").innerHTML;
+                let subCredit = subject.querySelector(".subCredits .cred").innerHTML;
                 let resultGpv = subject.querySelector(".subResult").getAttribute("data_gpv");
                 let fAttempt = subject.querySelector("input[type='checkbox']").checked;
 
                 // console.log(subCredit + "," + resultGpv + "," + fAttempt);
-                
                 //filters out the subjects that were done
                 if(resultGpv>=0){
                     //sets the gpv if second attempt
@@ -351,18 +351,53 @@
                             resultGpv = 2;
                         }
                     }
-
+                    totSubjects++;
                     cumGpvCred += (resultGpv * subCredit);
-
                     totCredits += Number(subCredit);
                 }
  
             });
-            gpa = (cumGpvCred / totCredits);
-            gpa = Math.round(gpa*100)/100;
-            document.querySelector(".gpaResult p").innerHTML = gpa;                           
-        }
+            gpa = cumGpvCred / totCredits;
+            // console.log(gpa);
+            gpa = Number(Math.round(gpa*100)/100);
+            // console.log(gpa);
 
+            //logic for selecting the expected class
+            switch(true){
+                case (gpa >= 3.5):
+                    expClass = "First Class";
+                break;
+                case (gpa >= 3.25):
+                    expClass = "Second Class (Upper Division)";
+                break;
+                case (gpa >= 3):
+                    expClass = "Second Class (Lower Division)";
+                break;
+                default:
+                    expClass = "General";
+            }
+
+            if(totSubjects>0){//true if subjects chosen
+                //hide or unhide the error section in the dialog
+                document.querySelector(".gpaResult").style.display = "flex";
+                document.querySelector(".gpaResultSection").style.display = "flex";
+                document.querySelector(".gpaError").style.display = "none";
+                //displaying class
+                document.querySelector(".gpaResult p").innerHTML = gpa;                           
+                document.querySelector("#classExp").innerHTML = expClass;
+                document.querySelector("#totSubjects").innerHTML = totSubjects;
+                document.querySelector("#totCredits").innerHTML = totCredits;
+            }else{
+                //hide or unhide the error section in the dialog
+                document.querySelector(".gpaResult").style.display = "none";
+                document.querySelector(".gpaResultSection").style.display = "none";
+                document.querySelector(".gpaError").style.display = "flex";
+            }
+            
+            
+            
+        }
+        
         
 
         //Function that retrieves data from the the subjects.json file

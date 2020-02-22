@@ -460,6 +460,7 @@ body {
           flex-direction: column;
   margin: auto;
   color: #444;
+  max-width: 300px;
 }
 
 .header {
