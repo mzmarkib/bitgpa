@@ -1,5 +1,15 @@
+@font-face {
+  font-family: 'myMyriadPro';
+  src: url("../fonts/MyriadPro-Regular.otf");
+}
+
+@font-face {
+  font-family: 'myFiraCode';
+  src: url("../fonts/FiraCode-Regular.ttf");
+}
+
 * {
-  font-family: "Myriad Pro";
+  font-family: "myMyriadPro";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -262,7 +272,7 @@ body {
 }
 
 .subject .sub .code {
-  font-family: "Fira Code";
+  font-family: "myFiraCode";
   color: #0089D2;
   font-size: 0.7em;
 }
@@ -277,7 +287,7 @@ body {
   line-height: 30px;
   height: 30px;
   width: 30px;
-  border: 1px solid #9f9f9f;
+  border: 1px solid #ededed;
   border-radius: 100%;
 }
 
@@ -288,7 +298,7 @@ body {
 }
 
 .subject .attempt {
-  font-family: "Myriad Pro";
+  font-family: "myMyriadPro";
 }
 
 .subject .attempt label {
@@ -364,7 +374,7 @@ body {
 }
 
 .disabledSub .attempt {
-  font-family: "Myriad Pro";
+  font-family: "myMyriadPro";
 }
 
 .disabledSub .attempt input[type="checkbox"]:checked + label {
@@ -382,7 +392,7 @@ body {
 }
 
 .semester .title {
-  font-family: "Fira Code";
+  font-family: "myFiraCode";
   color: #0089D2;
   text-indent: 20px;
 }
@@ -473,7 +483,7 @@ body {
 }
 
 .header div {
-  font-family: "Fira Code";
+  font-family: "myFiraCode";
 }
 
 .header div:nth-child(1) {
