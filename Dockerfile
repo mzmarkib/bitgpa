@@ -1,6 +1,9 @@
 # Use nginx alpine for lightweight container
 FROM nginx:alpine
 
+# Remove default nginx config
+RUN rm /etc/nginx/conf.d/default.conf
+
 # Copy static files to nginx html directory
 COPY . /usr/share/nginx/html
 
