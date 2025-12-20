@@ -108,7 +108,7 @@
 }
 
 .navbar .container .cta_calc div img {
-  width: 40px;
+  /* width: 40px; */
 }
 
 .dialogOverlay {
@@ -690,5 +690,163 @@ body {
 .ttattempt {
   top: -15px;
   left: 30px;
+}
+
+/* Install Prompt Styles */
+.install-prompt {
+  position: fixed;
+  bottom: 70px;
+  left: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #0089D2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  -webkit-animation: slideUp 0.3s ease-out;
+          animation: slideUp 0.3s ease-out;
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.install-prompt .install-prompt-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.install-prompt .install-prompt-icon {
+  font-size: 2.5em;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.install-prompt .install-prompt-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.install-prompt .install-prompt-text strong {
+  display: block;
+  color: #444;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.install-prompt .install-prompt-text p {
+  color: #9f9f9f;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.install-prompt .install-prompt-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 80px;
+}
+
+.install-prompt .install-btn-primary,
+.install-prompt .install-btn-secondary {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "myMyriadPro";
+  font-size: 0.9em;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.install-prompt .install-btn-primary {
+  background-color: #0089D2;
+  color: #fff;
+}
+
+.install-prompt .install-btn-primary:hover {
+  background-color: #0070b0;
+}
+
+.install-prompt .install-btn-primary:active {
+  -webkit-transform: scale(0.98);
+      -ms-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.install-prompt .install-btn-secondary {
+  background-color: #ededed;
+  color: #444;
+}
+
+.install-prompt .install-btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 480px) {
+  .install-prompt {
+    bottom: 60px;
+    left: 5px;
+    right: 5px;
+  }
+  .install-prompt .install-prompt-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .install-prompt .install-prompt-buttons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .install-prompt .install-btn-primary,
+  .install-prompt .install-btn-secondary {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 /*# sourceMappingURL=main.css.map */

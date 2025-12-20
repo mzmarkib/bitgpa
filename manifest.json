@@ -1,0 +1,48 @@
+{
+  "name": "BIT GPA Calculator",
+  "short_name": "BIT GPA",
+  "description": "Calculate cumulative GPA for BIT students at University of Colombo School of Computing (UCSC)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fcfcfc",
+  "theme_color": "#0089D2",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "img/icons/home1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icons/home1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Calculate GPA",
+      "short_name": "Calculate",
+      "description": "Open GPA calculator",
+      "url": "/?action=calc",
+      "icons": [
+        {
+          "src": "img/icons/dash1.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/gpa-calculation.png",
+      "sizes": "400x100",
+      "type": "image/png"
+    }
+  ]
+}
+

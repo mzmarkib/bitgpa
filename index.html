@@ -1,64 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158868863-1"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>BIT GPA Calculator - Calculate Cumulative GPA for UCSC BIT Students | Free Online Tool</title>
+    <meta name="title" content="BIT GPA Calculator - Calculate Cumulative GPA for UCSC BIT Students | Free Online Tool">
+    <meta name="description" content="Free online GPA calculator for BIT students at University of Colombo School of Computing (UCSC). Calculate your cumulative Grade Point Average (GPA) easily. Supports all semesters, multiple attempts, and honors class prediction.">
+    <meta name="keywords" content="BIT GPA calculator, UCSC GPA calculator, BIT grade point average, UCSC cumulative GPA, BIT students GPA, University of Colombo School of Computing GPA, calculate BIT GPA online, BIT degree GPA, UCSC honors class, BIT first class calculator, GPA calculator Sri Lanka, BIT exam results calculator, UCSC student tools, BIT cumulative GPA, online GPA calculator BIT">
+    <meta name="author" content="@mzmarkib">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bitgpa.demo.avalondigital.lk/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bitgpa.demo.avalondigital.lk/">
+    <meta property="og:title" content="BIT GPA Calculator - Calculate Cumulative GPA for UCSC BIT Students">
+    <meta property="og:description" content="Free online GPA calculator for BIT students at University of Colombo School of Computing (UCSC). Calculate your cumulative Grade Point Average easily.">
+    <meta property="og:image" content="https://bitgpa.demo.avalondigital.lk/img/gpa-calculation.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="BIT GPA Calculator">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bitgpa.demo.avalondigital.lk/">
+    <meta name="twitter:title" content="BIT GPA Calculator - Calculate Cumulative GPA for UCSC BIT Students">
+    <meta name="twitter:description" content="Free online GPA calculator for BIT students at University of Colombo School of Computing (UCSC). Calculate your cumulative Grade Point Average easily.">
+    <meta name="twitter:image" content="https://bitgpa.demo.avalondigital.lk/img/gpa-calculation.png">
+    <meta name="twitter:creator" content="@mzmarkib">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icons/home1.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0089D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BIT GPA Calculator">
+    <link rel="apple-touch-icon" href="img/icons/home1.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="data/subjects.json" as="fetch" crossorigin>
+    <link rel="preload" href="fonts/MyriadPro-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/FiraCode-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "BIT GPA Calculator",
+      "description": "Free online GPA calculator for BIT students at University of Colombo School of Computing (UCSC). Calculate your cumulative Grade Point Average easily.",
+      "url": "https://bitgpa.demo.avalondigital.lk/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "M. Z. Mohammed Arkib",
+        "alternateName": "@mzmarkib"
+      },
+      "inLanguage": "en",
+      "keywords": "BIT GPA calculator, UCSC GPA calculator, Grade Point Average, University of Colombo School of Computing"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many times can I repeat a subject?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can have up to Three (3) attempts on a particular subject."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the highest grade that can I get when I attempt a particular subject for the second time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can obtain any grade up to an A, but when accounting the Grade Point Value (GPV) for that particular subject can be up to 2.00 (GPV of a C grade)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Difference between an A grade and an A+ grade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both A and A+ grades carry the same Grade Point Value (GPV) of 4.00, but when calculating GPA for class awarding, an A+ will be given a Grade Point Value (GPV) of 4.25."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics - Defer loading -->
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-158868863-1');
     </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="A simple tool to calculate the cumulative Grade Point Average (GPA) for Undergrads who follow Bachelors in Information Technology (BIT) provided by University of Colombo School of Computing (UCSC). ">
-    <title>GPA Calculator - BIT (UCSC)</title>
-    <meta name="author" content="@mzmarkib">
-    <meta name="og:title" property="og:title" content="GPA Calculator - BIT (UCSC)">
-    <meta name="robots" content="index, follow">
-    <link href="index.html" rel="canonical">
-    <meta name="keywords" content="BIT, UCSC, GPA, Grade Point Average, University of Colombo School of Computing, Bachelors in Information Technology, how to calculate BIT GPA">
-    <link rel="stylesheet" href="css/main.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158868863-1"></script>
 </head>
 <body>
     
-    <header class="header">
-        <div>Grade Point Average Calculator</div>
+    <header class="header" role="banner">
+        <h1>Grade Point Average Calculator</h1>
         <div>BIT-UCSC</div>
     </header>
-    <footer></footer>
+    <footer role="contentinfo"></footer>
     <main>
-        <section id="home" class="page home">
-            <form id="gpaForm">
+        <section id="home" class="page home" role="main">
+            <form id="gpaForm" aria-label="GPA Calculator Form">
                 
             </form>
         </section>
-        <section class="page faq">
+        <section class="page faq" itemscope itemtype="https://schema.org/FAQPage">
             <div class="container">
                 <div class="pageTitle">FAQ</div>
-                <div class="pageDesc">Deals with a few questions that are frequently arise in students and are not sometimes answered.If you have any further questions you can ask them via the details in the contact page. We hope they are helpful...</div>
-                <div class="faq-touple">
-                    <div class="question">How many times can I repeat a subject?</div>
-                    <div class="answer">You can have upto Three(3) attempts on a particular subject.</div>
+                <div class="pageDesc">Deals with a few questions that frequently arise among students and are not always answered. If you have any further questions you can ask them via the details in the contact page. We hope they are helpful...</div>
+                <div class="faq-touple" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="question" itemprop="name">How many times can I repeat a subject?</div>
+                    <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">You can have up to Three (3) attempts on a particular subject.</span>
+                    </div>
                 </div>
-                <div class="faq-touple">
-                    <div class="question">What is the highest grade that can I get when I attempt a particular subject for the second time?</div>
-                    <div class="answer">You can obatain any grade upto an A, <strong>but</strong> when accounting the Grade Point Value (GPV) for that particular subject can be upto 2.00 (GPV of a C grade).</div>
+                <div class="faq-touple" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="question" itemprop="name">What is the highest grade that can I get when I attempt a particular subject for the second time?</div>
+                    <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">You can obtain any grade up to an A, <strong>but</strong> when accounting the Grade Point Value (GPV) for that particular subject can be up to 2.00 (GPV of a C grade).</span>
+                    </div>
                 </div>
-                <div class="faq-touple">
-                    <div class="question">What is the Difference between an A grade and an A+ grade</div>
-                    <div class="answer">Both A and A+ grades carries the same Grade Point Value (GPV) values of 4.00, <strong>but</strong> When calculating GPA for class awarding, and A+ will be given a Grade Point Value (GPV) of 4.25.</div>
+                <div class="faq-touple" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="question" itemprop="name">What is the Difference between an A grade and an A+ grade?</div>
+                    <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Both A and A+ grades carry the same Grade Point Value (GPV) of 4.00, <strong>but</strong> when calculating GPA for class awarding, an A+ will be given a Grade Point Value (GPV) of 4.25.</span>
+                    </div>
                 </div>
-                <div class="faq-touple">
-                    <div class="question">If I applied for a particular Exam and did not attend the exam, will it still count as an Attempt?</div>
-                    <div class="answer">No, If you are absent for an absent for an exam it will be counted as NOT SAT. On the other hand you are expected to produce a Medical for your absence.</div>
+                <div class="faq-touple" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="question" itemprop="name">If I applied for a particular Exam and did not attend the exam, will it still count as an Attempt?</div>
+                    <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">No, if you are absent for an exam it will be counted as NOT SAT. On the other hand, you are expected to produce a medical certificate for your absence.</span>
+                    </div>
                 </div>
-                <div class="faq-touple">
-                    <div class="question">What is a Credit?</div>
-                    <div class="answer">It is the measure of how much content a particular subject carries. A credit is equal to 15 hours of lectures or 30-45 hours of practical or an equivalent combination of lectures.</div>
+                <div class="faq-touple" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="question" itemprop="name">What is a Credit?</div>
+                    <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">It is the measure of how much content a particular subject carries. A credit is equal to 15 hours of lectures or 30-45 hours of practical or an equivalent combination of lectures.</span>
+                    </div>
                 </div>                
             </div>
         </section>
@@ -66,26 +176,26 @@
             <div class="container">
                 <div class="pageTitle">About</div>
                 <div class="pageDesc">
-                    <p>This App is was created on the sole purpose of "Practice", it might change, but not yet. And also I built this app because I think that there was no GPA Calculator that can calculate the GPA <strong>
-                        cumulatively</strong>  Hopefuly it might help me or someone following BIT-UCSC.</p>
+                    <p>This App was created for the sole purpose of "Practice", it might change, but not yet. And also I built this app because I think that there was no GPA Calculator that can calculate the GPA <strong>
+                        cumulatively</strong>  Hopefully it might help me or someone following BIT-UCSC.</p>
                     <p>This Web App was created using only pure HTML, CSS and JavaScript. No Frameworks or Libraries were used during the process. No... not even jQuery!</p>
                     <p>Enough about the app, lets' take a look at some info that you might need.</p>
                 </div>
                 <section>
                     <h1>Calculation of Grade Point Average</h1>
                     <p>Grade Point Values associated with each grade are as shown in the Table 1. These GPV values are used to compute GPA as using the following formulae:</p>
-                    <img src="img/gpa-calculation.png" alt="bit-gpa-calculation-formulae">
+                    <img src="img/gpa-calculation.png" alt="BIT GPA calculation formula: GPA equals sum of Grade Point Value multiplied by Credits divided by sum of Credits" width="400" height="100" loading="lazy">
                 </section>
                 
                 <section>
                     <h1>Grade Point Values (GPV)</h1>
-                    <p>The Grade you score has a particular value of Grade Point Value. It is used to calculated during the GPA calculation process. They are as given in Table 1.</p>
+                    <p>The grade you score has a particular value of Grade Point Value. It is used during the GPA calculation process. They are as given in Table 1.</p>
                     <table> <tbody> <tr> <td><strong>Range of Score</strong></td><td><strong>Grade</strong></td><td><strong>GPV</strong></td><td><strong>Attainment</strong></td></tr><tr> <td>90 &ndash;&nbsp;100</td><td>A+</td><td>4.00<a href="#"> [1]</a></td><td rowspan="3">Superior</td></tr><tr> <td>80 &ndash;&nbsp;89</td><td>A</td><td>4.00</td></tr><tr> <td>75 &ndash;&nbsp;79</td><td>A-</td><td>3.75</td></tr><tr> <td>70 &ndash;&nbsp;74</td><td>B+</td><td>3.25</td><td rowspan="3">Meritorious</td></tr><tr> <td>65 &ndash;&nbsp;69</td><td>B</td><td>3.00</td></tr><tr> <td>60 &ndash;&nbsp;64</td><td>B-</td><td>2.75</td></tr><tr> <td>55 &ndash; 59</td><td>C+</td><td>2.25</td><td rowspan="3">Adequate</td></tr><tr> <td>50 &ndash;&nbsp;54</td><td>C</td><td>2.00</td></tr><tr> <td>45 &ndash;&nbsp;49</td><td>C-</td><td>1.75</td></tr><tr> <td>40 &ndash;&nbsp;44</td><td>D+</td><td>1.25</td><td rowspan="3">Minimal</td></tr><tr> <td>30 &ndash; 39</td><td>D</td><td>1.00</td></tr><tr> <td>20 &ndash;&nbsp;29</td><td>D-</td><td>0.75</td></tr><tr> <td>00 &ndash; 19</td><td>E</td><td>0.00</td><td>Failure</td></tr></tbody><caption align="bottom">Table 1 - GPV values for associated Grades</caption></table>
                     <p><a href="#">[1]</a> When calculating classes, A+ will be given a Grade Point Value of 4.25</p>
                 </section>
                 <section>
                     <h1>Award of Honours and Classes</h1>
-                    <p>A Student qualifying for the award of a degree general (3 year) by completing all the relevant requirements shall also be qualified for the award of a class as follows.</p>
+                    <p>A student qualifying for the award of a general degree (3 year) by completing all the relevant requirements shall also be qualified for the award of a class as follows.</p>
                     <p class="indent">(a). First Class for obtaining a minimum overall GPA of 3.50</p>
                     <p class="indent">(b). Second Class (Upper Division) – for obtaining a minimum overall GPA of 3.25</p>
                     <p class="indent">(c). Second Class (Lower Division) – for obtaining a minimum overall GPA of 3.00</p>
@@ -95,19 +205,16 @@
         <section class="page contact">
             <div class="container">
                 <div class="pageTitle">Contact</div>
-                <div class="dp">
-                    <!-- <img src="img/dp_plain.jpg" alt="@mzmarkib"> -->
+                <div id="contactContent">
+                    <div class="dp">
+                        <!-- Contact info will be loaded here -->
+                    </div>
+                    <div class="cname"></div>
+                    <div class="chandle"></div>
+                    <div class="pageDesc">
+                        <p></p>
+                    </div>
                 </div>
-                <div class="cname">M. Z. Mohammed Arkib</div>
-
-                <div class="chandle">@mzmarkib</div>
-
-                <div class="pageDesc">
-                    <p>You find me on any Social Media using the handle <a href="https://www.google.com/search?q=%40mzmarkib" target="_blank">@mzmarkib</a></p>
-                </div>
-
-                
-                
             </div>
         </section>
     </main>    
@@ -148,22 +255,22 @@
     <nav class="navbar">
         <div class="container">
             <div name="home" class="item active">
-                <div name="home"><img src="img/icons/home1.png"></div>
+                <div name="home"><img src="img/icons/home1.png" alt="Home icon" width="24" height="24"></div>
                 <div>Home</div>
             </div>
             <div name="faq" class="item">
-                <div name="home"><img src="img/icons/faq2.png"></div>
+                <div name="home"><img src="img/icons/faq2.png" alt="FAQ icon" width="24" height="24"></div>
                 <div>FAQ</div>
             </div> 
             <div name="calc" class="item cta_calc">
-                <div><img src="img/icons/dash1.png"></div>
+                <div><img src="img/icons/dash1.png" alt="Calculate GPA icon" width="24" height="24"></div>
             </div> 
             <div name="about" class="item">
-                <div name="home"><img src="img/icons/info3.png"></div>
+                <div name="home"><img src="img/icons/info3.png" alt="About icon" width="24" height="24"></div>
                 <div>About</div>
             </div> 
             <div name="contact" class="item">
-                <div name="home"><img src="img/icons/info2.png"></div>
+                <div name="home"><img src="img/icons/info2.png" alt="Contact icon" width="24" height="24"></div>
                 <div>Contact</div>
             </div>
         </div>                       
@@ -185,28 +292,46 @@
         </div>
     </div>
     
+    <!-- Add to Home Screen Prompt -->
+    <div id="installPrompt" class="install-prompt" style="display: none;">
+        <div class="install-prompt-content">
+            <div class="install-prompt-icon">📱</div>
+            <div class="install-prompt-text">
+                <strong>Install BIT GPA Calculator</strong>
+                <p>Add to your home screen for quick access!</p>
+            </div>
+            <div class="install-prompt-buttons">
+                <button id="installBtn" class="install-btn-primary">Install</button>
+                <button id="installDismiss" class="install-btn-secondary">Later</button>
+            </div>
+        </div>
+    </div>
 
-    <script>     
+    <script defer>     
         //declarations
         const gpaResultBox = new gpaBox();
 
         openPage(".home");
-        function openPage(page){
-            let pages = document.querySelectorAll(".page");
-            for (let i = 0; i < pages.length; ++i) {
-                pages[i].style.display= "none";
+        function openPage(pageSelector){
+            const pages = document.querySelectorAll(".page");
+            const targetPage = document.querySelector(pageSelector);
+            
+            // Hide all pages
+            pages.forEach(function(page){
+                page.style.display = "none";
+            });
+            
+            // Show target page
+            if(targetPage){
+                targetPage.style.display = "block";
             }
-
-            page = document.querySelector(page);
-            page.style.display = "block";
-
         }
 
-        // Navigation click events (to be completed)
-        let navLinks = document.querySelectorAll(".navbar .item");        
+        // Navigation click events
+        const navLinks = document.querySelectorAll(".navbar .item");        
         navLinks.forEach(function(link){            
             link.addEventListener("click",function(e){
-                let attr = e.currentTarget.getAttribute('name');                
+                const attr = e.currentTarget.getAttribute('name');                
                 if(attr !== "calc"){
                     openPage("." + attr);
                     navLinks.forEach(function(item){
@@ -226,7 +351,7 @@
         
 
         //Custom Grades Prompt
-        let clickedSub; //the sebject that was clicked to changed
+        let clickedSub; //the subject that was clicked to change
         function GradesPrompt(){
 
             this.render = function(e){
@@ -244,7 +369,7 @@
         }
         
         //Closes Grades Prompt when the Close button or the Overlay is clicked on
-        var Prompt = new GradesPrompt();
+        const Prompt = new GradesPrompt();
 
         const closeBtns = document.querySelectorAll(".dialogOverlay, .promptClose");
 
@@ -263,16 +388,262 @@
                 clickedSub.target.innerHTML = grade;
                 clickedSub.target.setAttribute("data_gpv",gpv);
                 Prompt.close();
+                // Save selections after grade change
+                saveSelectionsToStorage();
             });
         });
 
 
+        //Load contact information
+        async function loadContactInfo(){
+            try {
+                const response = await fetch("data/contact.json");
+                const contact = await response.json();
+                
+                const contactContent = document.getElementById("contactContent");
+                if(contactContent){
+                    // Load profile image if available
+                    const dpDiv = contactContent.querySelector(".dp");
+                    if(contact.image){
+                        dpDiv.innerHTML = `<img src="${contact.image}" alt="${contact.name}" loading="lazy">`;
+                    }
+                    
+                    // Load name
+                    const nameDiv = contactContent.querySelector(".cname");
+                    if(nameDiv) nameDiv.textContent = contact.name;
+                    
+                    // Load handle
+                    const handleDiv = contactContent.querySelector(".chandle");
+                    if(handleDiv) handleDiv.textContent = contact.handle;
+                    
+                    // Load description and social links
+                    const descDiv = contactContent.querySelector(".pageDesc p");
+                    if(descDiv){
+                        let socialLinks = "";
+                        if(contact.social && contact.social.length > 0){
+                            socialLinks = contact.social.map(social => 
+                                `<a href="${social.url}" target="_blank" rel="noopener noreferrer" aria-label="${contact.name} on ${social.platform}">${social.platform}</a>`
+                            ).join(", ");
+                        }
+                        
+                        let emailLink = "";
+                        if(contact.email){
+                            emailLink = `<a href="mailto:${contact.email}" aria-label="Email ${contact.name}">${contact.email}</a>`;
+                        }
+                        
+                        let htmlContent = contact.description || "";
+                        if(emailLink){
+                            htmlContent = htmlContent.replace(contact.email, emailLink);
+                        }
+                        
+                        if(socialLinks){
+                            htmlContent += ` Find me on: ${socialLinks}`;
+                        }
+                        
+                        htmlContent += ` or <a href="${contact.searchUrl}" target="_blank" rel="noopener noreferrer">search for @mzmarkib</a>`;
+                        
+                        descDiv.innerHTML = htmlContent;
+                    }
+                }
+            } catch(error) {
+                console.error("Error loading contact information:", error);
+                // Fallback content
+                const contactContent = document.getElementById("contactContent");
+                if(contactContent){
+                    const nameDiv = contactContent.querySelector(".cname");
+                    if(nameDiv) nameDiv.textContent = "M. Z. Mohammed Arkib";
+                    const handleDiv = contactContent.querySelector(".chandle");
+                    if(handleDiv) handleDiv.textContent = "@mzmarkib";
+                    const descDiv = contactContent.querySelector(".pageDesc p");
+                    if(descDiv) descDiv.innerHTML = "You can find me on any Social Media using the handle <a href='https://www.google.com/search?q=%40mzmarkib' target='_blank' rel='noopener noreferrer'>@mzmarkib</a> or email me at <a href='mailto:hi@mzmarkib.site'>hi@mzmarkib.site</a>";
+                }
+            }
+        }
+        
+        // Local Storage Functions
+        const STORAGE_KEY = 'bitgpa_selections';
+        
+        function saveSelectionsToStorage() {
+            try {
+                const selections = {};
+                const subjects = document.querySelectorAll(".subject:not(.disabledSub)");
+                
+                subjects.forEach(function(subject) {
+                    const code = subject.querySelector(".sub .code").textContent;
+                    const checkbox = subject.querySelector("input[type='checkbox']");
+                    const resultBtn = subject.querySelector(".subResult");
+                    
+                    if(code && checkbox && resultBtn) {
+                        selections[code] = {
+                            gpv: resultBtn.getAttribute("data_gpv"),
+                            isFirstAttempt: checkbox.checked
+                        };
+                    }
+                });
+                
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(selections));
+            } catch(error) {
+                console.error("Error saving to local storage:", error);
+            }
+        }
+        
+        function loadSelectionsFromStorage() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if(!stored) return null;
+                
+                return JSON.parse(stored);
+            } catch(error) {
+                console.error("Error loading from local storage:", error);
+                return null;
+            }
+        }
+        
+        function applyStoredSelections(selections) {
+            if(!selections) return;
+            
+            Object.keys(selections).forEach(function(code) {
+                try {
+                    const checkbox = document.querySelector(`#${code}`);
+                    if(!checkbox) return;
+                    
+                    const subject = checkbox.closest('.subject');
+                    if(!subject) return;
+                    
+                    const resultBtn = subject.querySelector('.subResult');
+                    if(!resultBtn) return;
+                    
+                    const selection = selections[code];
+                    if(!selection) return;
+                    
+                    // Set attempt status
+                    checkbox.checked = selection.isFirstAttempt;
+                    const label = checkbox.nextElementSibling;
+                    if(label) {
+                        label.innerHTML = selection.isFirstAttempt ? 
+                            "1ST<span class='tooltip ttattempt'>Attempt</span>" : 
+                            "2ND<span class='tooltip ttattempt'>Attempt</span>";
+                    }
+                    
+                    // Set grade
+                    const gpv = selection.gpv;
+                    if(gpv && gpv !== "-1" && gpv !== "-1.0") {
+                        // Map GPV to grade text
+                        const gradeMap = {
+                            "4": "A+",
+                            "3.75": "A-",
+                            "3.25": "B+",
+                            "3": "B",
+                            "2.75": "B-",
+                            "2.25": "C+",
+                            "2": "C",
+                            "1.75": "C-",
+                            "1.25": "D+",
+                            "1": "D",
+                            "0.75": "D-",
+                            "0": "E"
+                        };
+                        
+                        // Try to find grade element first
+                        const gradeEl = document.querySelector(`.grades .grade[data_gpv="${gpv}"]`);
+                        if(gradeEl) {
+                            resultBtn.textContent = gradeEl.textContent.trim();
+                        } else if(gradeMap[gpv]) {
+                            resultBtn.textContent = gradeMap[gpv];
+                        }
+                        
+                        resultBtn.setAttribute("data_gpv", gpv);
+                    }
+                } catch(error) {
+                    console.error(`Error applying selection for ${code}:`, error);
+                }
+            });
+        }
+        
+        // PWA Install Prompt
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installBtn = document.getElementById('installBtn');
+        const installDismiss = document.getElementById('installDismiss');
+        
+        // Check if already installed
+        function isAppInstalled() {
+            return window.matchMedia('(display-mode: standalone)').matches || 
+                   window.navigator.standalone === true ||
+                   document.referrer.includes('android-app://');
+        }
+        
+        // Show install prompt
+        function showInstallPrompt() {
+            // Don't show if already installed
+            if(isAppInstalled()) return;
+            
+            // Check if user dismissed before
+            const dismissed = sessionStorage.getItem('installPromptDismissed');
+            if(dismissed) return;
+            
+            // Show prompt after a delay
+            setTimeout(() => {
+                if(deferredPrompt && installPrompt) {
+                    installPrompt.style.display = 'flex';
+                }
+            }, 3000);
+        }
+        
+        // Install button click
+        if(installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if(deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(`User response to install prompt: ${outcome}`);
+                    
+                    if(outcome === 'accepted') {
+                        installPrompt.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                }
+            });
+        }
+        
+        // Dismiss button click
+        if(installDismiss) {
+            installDismiss.addEventListener('click', () => {
+                installPrompt.style.display = 'none';
+                sessionStorage.setItem('installPromptDismissed', 'true');
+            });
+        }
+        
+        // Listen for beforeinstallprompt event
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+        
+        // Register Service Worker
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered:', registration);
+                    })
+                    .catch((error) => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+        
         //Once the Body Loads
-        const body = document.querySelector("body");
-
-        body.onload = function(){
+        window.addEventListener("load", function(){
+            // Load contact information
+            loadContactInfo();
+            
             //loads the list of subjects
             getSubjects().then((data) => {
+                // Load saved selections
+                const savedSelections = loadSelectionsFromStorage();
+                
                 let subjectSrting = ""; //initialize variable that holds the html of all the subjects semester wise
 
                 // loops around each semester                
@@ -282,10 +653,7 @@
 
                     // loops around each subject for each semester
                     semester.subjects.forEach(function (subject){
-                        let dis = ""
-                        if(subject.type != "C"){
-                            dis = "disabledSub";
-                        }
+                        const dis = subject.type !== "C" ? "disabledSub" : "";
                         subjectSrting += "<div class='subject "+dis+"'> <div class='sub'><span class='code'>" + subject.code + "</span><span class='name'>" + subject.name + "</span></div> <div class='subCredits'><span class='cred'>" + subject.cred + "</span><span class='tooltip ttcredit'>Credit Value</span></div> <div class='attempt'> <input type='checkbox' id='" + subject.code + "' checked><label for='" + subject.code + "'>1st<span class='tooltip ttattempt'>Attempt</span></label> </div> <button type='button' data_gpv='-1'  class='subResult'>SELECT</button> </div>";
                     });                    
                     
@@ -299,10 +667,19 @@
                 
                 //Opens Grades Prompt for each SELECT Button when Clicked
                 const resultBtns = document.querySelectorAll(".subResult");
+                
+                // Apply saved selections if available (after DOM is updated)
+                if(savedSelections) {
+                    setTimeout(() => {
+                        applyStoredSelections(savedSelections);
+                    }, 100);
+                }
 
                 resultBtns.forEach(function(resultBtn){
                     resultBtn.addEventListener("click",function(e){
                         Prompt.render(e);
+                        // Save after grade selection
+                        setTimeout(saveSelectionsToStorage, 100);
                     });
                 });
 
@@ -310,15 +687,19 @@
                 
                 checkboxes.forEach(function(check){
                     check.addEventListener("click",function(e){
-                        if(!e.currentTarget.querySelector("input").checked){
-                            e.currentTarget.querySelector("label").innerHTML = "2ND";
+                        const checkbox = e.currentTarget.querySelector("input");
+                        const label = e.currentTarget.querySelector("label");
+                        if(!checkbox.checked){
+                            label.innerHTML = "2ND<span class='tooltip ttattempt'>Attempt</span>";
                         }else{
-                            e.currentTarget.querySelector("label").innerHTML = "1ST";
+                            label.innerHTML = "1ST<span class='tooltip ttattempt'>Attempt</span>";
                         }
+                        // Save after attempt change
+                        saveSelectionsToStorage();
                     });
                 });
             })
-        }
+        });
         
         //Object and controls for GPA result Box
         function gpaBox () {
@@ -328,11 +709,11 @@
             this.open = function(){ 
                 this.object.style.display = "block";
                 this.status =  true;
-            },
+            };
             this.close = function(){
                 this.object.style.display = "none";
                 this.status = false;
-            }
+            };
         }
         //Event listener for click on the gpaResultBox close Btn
         const gpaClose = document.querySelectorAll(".gpaClose");
@@ -343,40 +724,45 @@
         });     
 
         function calculateGpa(){
-            let subjects = document.querySelectorAll(".subject:not(.disabledSub)");
-            // subjects = subjects.querySelectorAll('.subject');
-            // console.log(subjects.length);
-
+            const subjects = document.querySelectorAll(".subject:not(.disabledSub)");
+            
             let totCredits = 0;
             let totSubjects = 0;
             let expClass = "";
             let cumGpvCred = 0;
             let gpa = 0.00;
             
-            subjects.forEach(function (subject){
-                let subCredit = subject.querySelector(".subCredits .cred").innerHTML;
-                let resultGpv = subject.querySelector(".subResult").getAttribute("data_gpv");
-                let fAttempt = subject.querySelector("input[type='checkbox']").checked;
+            // Cache DOM queries for better performance
+            const subjectCount = subjects.length;
+            for(let i = 0; i < subjectCount; i++){
+                const subject = subjects[i];
+                const subCreditEl = subject.querySelector(".subCredits .cred");
+                const resultBtn = subject.querySelector(".subResult");
+                const checkbox = subject.querySelector("input[type='checkbox']");
+                
+                if(!subCreditEl || !resultBtn || !checkbox) continue;
+                
+                const subCredit = Number(subCreditEl.textContent);
+                let resultGpv = Number(resultBtn.getAttribute("data_gpv"));
+                const fAttempt = checkbox.checked;
 
-                // console.log(subCredit + "," + resultGpv + "," + fAttempt);
                 //filters out the subjects that were done
-                if(resultGpv>=0){
-                    //sets the gpv if second attempt
-                    if(!fAttempt){
-                        if(resultGpv>2){
-                            resultGpv = 2;
-                        }
+                if(resultGpv >= 0){
+                    //sets the gpv if second attempt (capped at 2.00)
+                    // For second attempts, maximum GPV is 2.00 (C grade) regardless of actual grade obtained
+                    if(!fAttempt && resultGpv > 2.00){
+                        resultGpv = 2.00;
                     }
                     totSubjects++;
                     cumGpvCred += (resultGpv * subCredit);
-                    totCredits += Number(subCredit);
+                    totCredits += subCredit;
                 }
- 
-            });
-            gpa = cumGpvCred / totCredits;
-            // console.log(gpa);
-            gpa = Number(Math.round(gpa*100)/100);
-            // console.log(gpa);
+            }
+            
+            // Prevent division by zero
+            if(totCredits > 0){
+                gpa = Math.round((cumGpvCred / totCredits) * 100) / 100;
+            }
 
             //logic for selecting the expected class
             switch(true){
@@ -416,15 +802,16 @@
         
         
 
-        //Function that retrieves data from the the subjects.json file
-        let page = document.querySelector(".home form");
+        //Function that retrieves data from the subjects.json file
         const getSubjects = async function() {
-            return await fetch("data/subjects.json")
-            .then(res => { return res.json() })
-            .then(data => { 
-                return data;
-            })
-            .catch(error => console.log(error))
+            try {
+                const response = await fetch("data/subjects.json");
+                if(!response.ok) throw new Error("Failed to fetch subjects");
+                return await response.json();
+            } catch(error) {
+                console.error("Error loading subjects:", error);
+                return [];
+            }
         }
 
     </script>

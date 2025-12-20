@@ -1,0 +1,26 @@
+{
+  "name": "M. Z. Mohammed Arkib",
+  "handle": "@mzmarkib",
+  "email": "hi@mzmarkib.site",
+  "image": "img/dp_plain.jpg",
+  "social": [
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/mzmarkib",
+      "handle": "@mzmarkib"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/mzmarkib",
+      "handle": "@mzmarkib"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mzmarkib",
+      "handle": "@mzmarkib"
+    }
+  ],
+  "description": "You can find me on any Social Media using the handle @mzmarkib or email me at hi@mzmarkib.site",
+  "searchUrl": "https://www.google.com/search?q=%40mzmarkib"
+}
+
